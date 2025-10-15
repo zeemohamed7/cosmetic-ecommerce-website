@@ -15,16 +15,16 @@
 
     <style>
       /*
-      #A2844B — bronze
+           #A2844B — bronze
 
-      #FBF2EB — cream
+           #FBF2EB — cream
 
-      #FFE4E1 — pink
+           #FFE4E1 — pink
 
-      #F2CCC6 — peach
+           #F2CCC6 — peach
 
-      #735248 — brown
-       */
+           #735248 — brown
+            */
 
       /* To override bootstrap colours */
       :root {
@@ -50,11 +50,11 @@
         width: 4rem;
       }
       /* .navbar {
-        color: var(--peach);
-      } */
+             color: var(--peach);
+           } */
       /* .navbar-gloss .nav-link:hover {
-              color: #1f1f1f;
-            } */
+                   color: #1f1f1f;
+                 } */
 
       .navbar .nav-link {
         margin-top: -0.5rem;
@@ -76,6 +76,7 @@
 
       .btn-brand {
         background: var(--bronze);
+        color: var(--cream);
         border-color: var(--bronze);
       }
 
@@ -175,6 +176,36 @@
 
       .footer-bg {
         background-color: #ffe4e1;
+      }
+
+      /* Register form */
+
+      .form-header {
+        text-align: center;
+      }
+      #register-form {
+        border: solid var(--pink) 2px;
+        border-radius: 6px;
+        background: white;
+        max-width: 500px;
+        width: 100%;
+      }
+      .submit-btn {
+        background-color: var(--peach);
+        border: 0;
+      }
+      .submit-btn:hover {
+        background-color: var(--pink);
+        border: 0;
+        color: #434343;
+      }
+
+      #register-form-section {
+        background: var(--pink);
+      }
+
+      .form-header {
+        color: var(--peach);
       }
     </style>
   </head>
@@ -299,8 +330,56 @@
       </div>
     </section>
 
+    <section
+      class="min-vh-50 d-flex justify-content-center align-items-center py-5"
+      id="register-form-section"
+    >
+      <div class="p-4 rounded shadow-sm" id="register-form">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+            <h4 class="form-header">Register Your Interest</h4>
+            <form class="mx-auto">
+              <div class="mb-3">
+                <label class="form-label">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First Name"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="Email" />
+              </div>
+
+              <!-- <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="check" />
+                <label class="form-check-label fs-10" for="check"
+                  >Sign up for newsletter and offers</label
+                >
+              </div> -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-brand submit-btn">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer: copy paste this in all pages -->
-    <footer class="footer-gloss mt-5 footer-bg">
+    <footer class="footer-gloss footer-bg">
       <div class="container py-5">
         <div class="row g-4">
           <div class="col-lg-5">
