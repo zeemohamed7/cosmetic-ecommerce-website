@@ -42,30 +42,25 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 100000;
+        z-index: 100000; /* over the hero image */
         background: var(--cream);
       }
 
       .logo {
         width: 4rem;
       }
-      /* .navbar {
-             color: var(--peach);
-           } */
-      /* .navbar-gloss .nav-link:hover {
-                   color: #1f1f1f;
-                 } */
 
       .navbar .nav-link {
         margin-top: -0.5rem;
         color: var(--brown);
         background-image: linear-gradient(var(--bronze), var(--bronze));
         background-repeat: no-repeat;
-        background-position: 0 100%;
+        background-position: 50% 100%; /* underlining the navbar */
         background-size: 0 2px;
         transition: background-size 0.2s ease;
         padding-bottom: 0.25rem;
       }
+
       .navbar .nav-link:hover,
       .navbar .nav-link:focus,
       .navbar .nav-link.active {
