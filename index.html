@@ -14,17 +14,17 @@
     ></script>
 
     <style>
-      /* 
-#A2844B — bronze
+      /*
+      #A2844B — bronze
 
-#FBF2EB — cream
+      #FBF2EB — cream
 
-#FFE4E1 — pink
+      #FFE4E1 — pink
 
-#F2CCC6 — peach
+      #F2CCC6 — peach
 
-#735248 — brown
- */
+      #735248 — brown
+       */
 
       /* To override bootstrap colours */
       :root {
@@ -36,29 +36,30 @@
       }
 
       /* ---------- Navbar ---------- */
-      .navbar-gloss {
+
+      .navbar {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 100000;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.65),
-          rgba(255, 255, 255, 0.35)
-        );
-        backdrop-filter: blur(10px) saturate(140%);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        background: var(--cream);
       }
-      .navbar {
-        color: #1f1f1f;
+
+      .logo {
+        width: 4rem;
       }
-      /* .navbar-gloss .nav-link:hover {
-        color: #1f1f1f;
+      /* .navbar {
+        color: var(--peach);
       } */
+      /* .navbar-gloss .nav-link:hover {
+              color: #1f1f1f;
+            } */
 
       .navbar .nav-link {
-        background-image: linear-gradient(#1f1f1f, #1f1f1f);
+        margin-top: -0.5rem;
+        color: var(--brown);
+        background-image: linear-gradient(var(--bronze), var(--bronze));
         background-repeat: no-repeat;
         background-position: 0 100%;
         background-size: 0 2px;
@@ -69,12 +70,15 @@
       .navbar .nav-link:focus,
       .navbar .nav-link.active {
         background-size: 100% 2px;
+        color: var(--brown);
+        font-weight: 500;
       }
 
       .btn-brand {
         background: var(--bronze);
         border-color: var(--bronze);
       }
+
       .btn-brand:hover {
         background-color: var(--brown);
       }
@@ -93,8 +97,7 @@
             rgba(0, 0, 0, 0.35),
             rgba(0, 0, 0, 0.45)
           ),
-          url('https://t4.ftcdn.net/jpg/02/73/55/33/360_F_273553300_sBBxIPpLSn5iC5vC8FwzFh6BJDKvUeaC.jpg')
-            center/cover no-repeat;
+          url('images/hero.png') center/cover no-repeat;
       }
       .hero .panel {
         padding: 2.5rem 2rem;
@@ -130,6 +133,28 @@
       }
 
       /* ---------- Footer ---------- */
+
+      .logo-footer {
+        width: 7rem;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin-left: -16px;
+      }
+
+      footer h4 {
+        color: var(--bronze);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-left: -16px;
+      }
+
+      .d-flex.align-items-center {
+        gap: 0rem;
+      }
+
       .footer-gloss {
         background: linear-gradient(
           180deg,
@@ -140,7 +165,7 @@
         border-top: 1px solid rgba(0, 0, 0, 0.06);
       }
       .footer-link {
-        color: #232323;
+        color: #434343;
         text-decoration: none;
       }
       .footer-link:hover {
@@ -155,9 +180,11 @@
   </head>
   <body>
     <!-- Navbar: copy paste this in all pages-->
-    <nav class="navbar navbar-expand-lg navbar-gloss">
+    <nav class="navbar navbar-expand-lg navbar">
       <div class="container">
-        <a class="navbar-brand px-4" href="home.html">Celeste</a>
+        <a class="navbar-brand px-4" href="index.html"
+          ><img src="images/logo-without-name.png" alt="Logo" class="logo"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -167,9 +194,9 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div id="nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
             <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
+              <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#products">Products</a>
@@ -183,7 +210,11 @@
             <li class="nav-item">
               <a class="nav-link" href="our-story.html">Our Story</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>
           </ul>
+
           <span class="navbar-text">Welcome, user</span>
         </div>
       </div>
@@ -210,7 +241,45 @@
           <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
               <img
-                src="https://images.unsplash.com/photo-1600180758890-6f9c9a68e6c9?q=80&w=800&auto=format&fit=crop"
+                src="images/amanda-dalbjorn-t7WrWaewbtw-unsplash.jpg"
+                class="card-img-top"
+                alt="Celeste product"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-semibold text-primary">
+                  Radiant Foundation
+                </h5>
+                <p class="card-text text-secondary">
+                  Lightweight coverage that blends seamlessly for a natural
+                  glow.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <img
+                src="images/amanda-dalbjorn-t7WrWaewbtw-unsplash.jpg"
+                class="card-img-top"
+                alt="Celeste product"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-semibold text-primary">
+                  Radiant Foundation
+                </h5>
+                <p class="card-text text-secondary">
+                  Lightweight coverage that blends seamlessly for a natural
+                  glow.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <img
+                src="images/amanda-dalbjorn-t7WrWaewbtw-unsplash.jpg"
                 class="card-img-top"
                 alt="Celeste product"
               />
@@ -235,10 +304,15 @@
       <div class="container py-5">
         <div class="row g-4">
           <div class="col-lg-5">
-            <div class="d-flex align-items-center mb-3">
-              <div class="rounded-circle me-3"></div>
-              <h4 class="m-0 fw-semibold">Celeste</h4>
+            <div class="d-flex align-items-center gap-1">
+              <img
+                src="images/logo-without-bg.png"
+                alt="Logo"
+                class="logo-footer"
+              />
+              <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
             </div>
+
             <p class="text-secondary mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
