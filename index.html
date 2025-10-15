@@ -1,13 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Celeste</title>
-    <!-- CSS stylesheets -->
-    <link rel="stylesheet" href="./css//bootstrap.min.css" />
-    <!-- JS files -->
-    <script src="./js/bootstrap.min.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <style>
+      /* 
+#A2844B — bronze
+
+#FBF2EB — cream
+
+#FFE4E1 — pink
+
+#F2CCC6 — peach
+
+#735248 — brown
+ */
+
+      /* To override bootstrap colours */
+      :root {
+        --bronze: #a2844b;
+        --cream: #fbf2eb;
+        --pink: #ffe4e1;
+        --peach: #f2ccc6;
+        --brown: #735248;
+      }
+
+      /* ---------- Navbar ---------- */
+      .navbar-gloss {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100000;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.65),
+          rgba(255, 255, 255, 0.35)
+        );
+        backdrop-filter: blur(10px) saturate(140%);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+      .navbar {
+        color: #1f1f1f;
+      }
+      /* .navbar-gloss .nav-link:hover {
+        color: #1f1f1f;
+      } */
+
+      .navbar .nav-link {
+        background-image: linear-gradient(#1f1f1f, #1f1f1f);
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 0 2px;
+        transition: background-size 0.2s ease;
+        padding-bottom: 0.25rem;
+      }
+      .navbar .nav-link:hover,
+      .navbar .nav-link:focus,
+      .navbar .nav-link.active {
+        background-size: 100% 2px;
+      }
+
+      .btn-brand {
+        background: var(--bronze);
+        border-color: var(--bronze);
+      }
+      .btn-brand:hover {
+        background-color: var(--brown);
+      }
+      /* ---------- Hero ---------- */
+      .hero {
+        min-height: 80vh;
+        padding-top: 5rem;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+          ),
+          url('https://t4.ftcdn.net/jpg/02/73/55/33/360_F_273553300_sBBxIPpLSn5iC5vC8FwzFh6BJDKvUeaC.jpg')
+            center/cover no-repeat;
+      }
+      .hero .panel {
+        padding: 2.5rem 2rem;
+        max-width: 760px;
+        margin-inline: auto;
+      }
+      .hero h1 {
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      .hero .lead {
+        font-weight: 500;
+        opacity: 0.95;
+      }
+
+      /* ---------- Cards ---------- */
+      .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+      .card-title {
+        font-size: 1.25rem;
+      }
+      .text-primary {
+        color: #a2844b !important;
+      }
+      .btn-primary {
+        background-color: #a2844b !important;
+        border-color: #a2844b !important;
+      }
+
+      /* ---------- Footer ---------- */
+      .footer-gloss {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(245, 245, 245, 0.8)
+        );
+        backdrop-filter: blur(6px);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .footer-link {
+        color: #232323;
+        text-decoration: none;
+      }
+      .footer-link:hover {
+        color: #353434;
+        text-decoration: underline;
+      }
+
+      .footer-bg {
+        background-color: #ffe4e1;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- Navbar: copy paste this in all pages-->
+    <nav class="navbar navbar-expand-lg navbar-gloss">
+      <div class="container">
+        <a class="navbar-brand px-4" href="home.html">Celeste</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="nav" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="science.html">Science</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="making-of.html">Making Of</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="our-story.html">Our Story</a>
+            </li>
+          </ul>
+          <span class="navbar-text">Welcome, user</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="panel">
+        <h1 class="display-4 mb-3">Glow, every day.</h1>
+        <p class="lead mb-4">
+          Clean skincare & beauty, crafted for radiant confidence.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="#" class="btn btn-lg btn-brand text-white px-4">Shop Now</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Products -->
+    <section class="py-5" id="products">
+      <div class="container text-center">
+        <h2 class="mb-3">Best Sellers</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <img
+                src="https://images.unsplash.com/photo-1600180758890-6f9c9a68e6c9?q=80&w=800&auto=format&fit=crop"
+                class="card-img-top"
+                alt="Celeste product"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-semibold text-primary">
+                  Radiant Foundation
+                </h5>
+                <p class="card-text text-secondary">
+                  Lightweight coverage that blends seamlessly for a natural
+                  glow.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer: copy paste this in all pages -->
+    <footer class="footer-gloss mt-5 footer-bg">
+      <div class="container py-5">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="d-flex align-items-center mb-3">
+              <div class="rounded-circle me-3"></div>
+              <h4 class="m-0 fw-semibold">Celeste</h4>
+            </div>
+            <p class="text-secondary mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <h6 class="text-muted mb-3">Shop</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a class="footer-link" href="#">Makeup Collection</a>
+              </li>
+              <li class="mb-2">
+                <a class="footer-link" href="#">Skincare Essentials</a>
+              </li>
+              <li class="mb-2">
+                <a class="footer-link" href="#">Science &amp; Research</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-4">
+            <h6 class="text-muted mb-3">Contact</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <i class="bi bi-envelope me-2 text-secondary"></i>
+                <a class="footer-link" href="mailto:hello@celeste.com"
+                  >hello@celeste.com</a
+                >
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-telephone me-2 text-secondary"></i>
+                <a class="footer-link" href="tel:+97317770008">+973 17770008</a>
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-geo-alt me-2 text-secondary"></i>
+                <span class="text-secondary"
+                  >Bahrain Polytechnic, Isa Town</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-4 opacity-25" />
+        <div class="small text-secondary">
+          &copy; 2025 Celeste Cosmetics. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
