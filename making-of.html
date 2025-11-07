@@ -121,52 +121,88 @@
         background-color: #ffe4e1;
       }
 
-      /* ------- Everything else --------- */
+      /* ------- Mockups section --------- */
 
-      /*-------- Mockups ------*/
       .mockups-section {
-        /* background-color: var(--cream); */
-        color: var(--brown);
         text-align: center;
-        margin-top: 80px 0;
-        padding-bottom: 100px;
-        padding-top: 80px;
+        padding: 100px 0 80px;
       }
 
       .mockups-section h2 {
-        margin: 40px;
+        color: var(--brown);
+        margin-bottom: 20px;
       }
 
       .mockup-box {
         width: 100%;
-        max-width: 400px;
-        height: 300px;
-        border: 1px solid var(--brown);
+        max-width: 380px;
+        height: 260px;
+        border: 1px solid var(--bronze);
         border-radius: 12px;
         background-color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-      }
-
-      .mockup-box img {
         transition: transform 0.2s ease;
       }
 
-      .mockup-box img:hover {
-        transform: scale(1.03);
+      .mockup-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       }
 
-      /* ---- Justifications section ------ */
+      .mockup-box img {
+        width: 100%;
+        object-fit: contain;
+      }
 
+      .mockup-caption {
+        color: var(--brown);
+        font-weight: 500;
+        margin-top: 10px;
+      }
+
+      /* ------- Justifications Section ------- */
       .justification-section {
-        max-width: 100%;
-        padding-top: 70px;
+        padding: 80px 0;
         background-color: var(--cream);
       }
-      .justification-section-box {
-        padding: 60px 0px;
+
+      .justification-section h2 {
+        text-align: center;
+        color: var(--brown);
+        margin-bottom: 50px;
+      }
+
+      .brand-palette img {
+        max-width: 700px;
+        border: 1px solid #e5d7e7;
+        border-radius: 12px;
+        background-color: #fff;
+        padding: 10px;
+      }
+
+      .justification-card {
+        background-color: #fff;
+        border: 2px solid var(--bronze);
+        border-radius: 10px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        transition: box-shadow 0.2s ease;
+      }
+
+      .justification-card:hover {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .justification-card h5 {
+        color: var(--bronze);
+        font-weight: 600;
+        margin-bottom: 15px;
       }
     </style>
     <!-- JS files -->
@@ -214,90 +250,78 @@
       </div>
     </nav>
 
-    <!-- Mock ups section  -->
-    <div class="mockups-section text-center">
+    <!-- Mockups -->
+    <section class="mockups-section">
       <h2>Design Mockups</h2>
-      <p class="text-muted mb-4" style="max-width: 600px; margin: 0 auto">
-        The Celeste color palette was chosen to reflect sophistication,
-        calmness, and inclusivity. It combines soft lavenders, warm neutrals,
-        and subtle contrasts for a modern and elegant feel.
+      <p class="text-muted mb-5" style="max-width: 600px; margin: 0 auto">
+        The Celeste color palette reflects sophistication, calmness, and
+        inclusivity. It combines soft lavenders, warm neutrals, and subtle
+        contrasts for a modern and elegant feel.
       </p>
-      <div class="row g-1">
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <div class="mockup-box">
-            <a href="images/homepage-mockup.png" target="_blank">
-              <img
-                src="images/homepage-mockup.png"
-                alt="Homepage Mockup"
-                class="img-fluid rounded shadow-sm"
-              />
-            </a>
-          </div>
-          <p class="text-center mt-2" style="color: var(--brown)">Homepage</p>
-        </div>
 
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <div class="mockup-box">
-            <a href="images/productdetail-mockup.png" target="_blank">
-              <img
-                src="images/productdetail-mockup.png"
-                alt="Product Detail Page Mockup"
-                class="img-fluid rounded shadow-sm"
-              />
-            </a>
+      <div class="container">
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            <div class="mockup-box">
+              <a href="images/homepage-mockup.png" target="_blank">
+                <img src="images/homepage-mockup.png" alt="Homepage Mockup" />
+              </a>
+            </div>
+            <p class="mockup-caption">Homepage</p>
           </div>
-          <p class="text-center mt-2" style="color: var(--brown)">
-            Product Detail Page
-          </p>
-        </div>
 
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <div class="mockup-box">
-            <a href="images/shoppingcart-mockup.png" target="_blank">
-              <img
-                src="images/shoppingcart-mockup.png"
-                alt="Shopping Cart Page Mockup"
-                class="img-fluid rounded shadow-sm"
-              />
-            </a>
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            <div class="mockup-box">
+              <a href="images/productdetail-mockup.png" target="_blank">
+                <img
+                  src="images/productdetail-mockup.png"
+                  alt="Product Detail Mockup"
+                />
+              </a>
+            </div>
+            <p class="mockup-caption">Product Detail Page</p>
           </div>
-          <p class="text-center mt-2" style="color: var(--brown)">
-            Shopping Cart Page
-          </p>
-        </div>
 
-        <div class="col-md-6 d-flex flex-column align-items-center">
-          <div class="mockup-box">
-            <a href="images/science-mockup.png" target="_blank">
-              <img
-                src="images/science-mockup.png"
-                alt="Science Page Mockup"
-                class="img-fluid rounded shadow-sm"
-              />
-            </a>
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            <div class="mockup-box">
+              <a href="images/shoppingcart-mockup.png" target="_blank">
+                <img
+                  src="images/shoppingcart-mockup.png"
+                  alt="Shopping Cart Mockup"
+                />
+              </a>
+            </div>
+            <p class="mockup-caption">Shopping Cart Page</p>
           </div>
-          <p class="text-center mt-2" style="color: var(--brown)">
-            Science Page
-          </p>
+
+          <div class="col-md-6 d-flex flex-column align-items-center">
+            <div class="mockup-box">
+              <a href="images/science-mockup.png" target="_blank">
+                <img
+                  src="images/science-mockup.png"
+                  alt="Science Page Mockup"
+                />
+              </a>
+            </div>
+            <p class="mockup-caption">Science Page</p>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Justification section -->
+    </section>
 
-    <section class="container my-5 justification-section">
-      <h2 class="text-center" style="color: var(--brown)">
-        Design & Code Justifications
-      </h2>
+    <!-- Justifications -->
+    <section class="justification-section">
+      <div class="container">
+        <h2>Design & Code Justifications</h2>
 
-      <div class="row g-4 justification-section-box">
-        <section class="container text-center">
-          <h4 class="mb-4">Our Brand Palette</h4>
+        <!-- Brand Palette -->
+        <div class="text-center mb-5">
+          <h4 class="mb-3" style="color: var(--bronze)">Our Brand Palette</h4>
           <p class="text-muted mb-4" style="max-width: 600px; margin: 0 auto">
-            The Celeste color palette was chosen to reflect sophistication,
-            calmness, and inclusivity. It combines soft lavenders, warm
-            neutrals, and subtle contrasts for a modern and elegant feel.
+            The Celeste color palette reflects sophistication, calmness, and
+            inclusivity. It balances warmth and softness to evoke modern
+            femininity and trust.
           </p>
-
           <div class="brand-palette">
             <img
               src="images/brand-pallete.png"
@@ -305,46 +329,36 @@
               class="img-fluid rounded shadow-sm"
             />
           </div>
-        </section>
-        <!-- Justification A -->
-        <div class="col-lg-6">
-          <div
-            class="p-4 rounded shadow-sm h-100"
-            style="background-color: #fff; border: 2px solid var(--bronze)"
-          >
-            <h5 class="mb-3" style="color: var(--bronze)">
-              a) Impact of Design and Color Choices
-            </h5>
-            <p>
-              The choice of a soft lavender color palette aligns with Celeste’s
-              brand identity — calm, elegant, and inclusive. The consistent use
-              of white space improves readability and focuses user attention on
-              products. Typography and layout follow minimalistic principles to
-              enhance clarity and modern appeal. The use of consistent button
-              colors and gentle hover effects ensures accessibility while
-              reinforcing brand cohesion across pages.
-            </p>
-          </div>
         </div>
 
-        <!-- Justification B -->
-        <div class="col-lg-6">
-          <div
-            class="p-4 rounded shadow-sm h-100"
-            style="background-color: #fff; border: 2px solid var(--bronze)"
-          >
-            <h5 class="mb-3" style="color: var(--bronze)">
-              b) Impact of HTML, CSS, JS, and Bootstrap on Maintainability
-            </h5>
-            <p>
-              The website uses semantic HTML5 structure for clear content
-              hierarchy, making it easy to update and maintain. Bootstrap’s grid
-              system ensures responsive layouts without extensive custom code,
-              reducing technical debt. Modular CSS styling and consistent class
-              naming promote reusability across pages. Lightweight JavaScript
-              enhances interactivity without affecting performance, ensuring a
-              maintainable and scalable front-end codebase.
-            </p>
+        <!-- Justification Boxes -->
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 d-flex">
+            <div class="justification-card">
+              <h5>a) Impact of Design and Color Choices</h5>
+              <p>
+                The soft lavender and bronze tones align with Celeste’s brand
+                identity — calm, elegant, and inclusive. White space improves
+                readability and directs focus to products, while minimal
+                typography enhances clarity. Consistent button colors and hover
+                states reinforce accessibility and cohesion across all pages.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex">
+            <div class="justification-card">
+              <h5>
+                b) Impact of HTML, CSS, JS, and Bootstrap on Maintainability
+              </h5>
+              <p>
+                Semantic HTML5 ensures clear content structure and easier
+                updates. Bootstrap’s responsive grid system minimizes custom
+                code and ensures consistency. Modular CSS and reusable class
+                naming improve scalability. Lightweight JavaScript enhances
+                interactivity while maintaining strong performance.
+              </p>
+            </div>
           </div>
         </div>
       </div>
