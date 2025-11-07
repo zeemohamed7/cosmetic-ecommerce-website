@@ -90,52 +90,6 @@
       .btn-brand:hover {
         background-color: var(--brown);
       }
-      /* ---------- Hero ---------- */
-      .hero {
-        min-height: 80vh;
-        padding-top: 5rem;
-        display: grid;
-        place-items: center;
-        position: relative;
-        overflow: hidden;
-        color: #fff;
-        text-align: center;
-        background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.45)
-          ),
-          url('images/hero.png') center/cover no-repeat;
-      }
-      .hero .panel {
-        padding: 2.5rem 2rem;
-        max-width: 760px;
-      }
-      .hero h1 {
-        font-weight: 800;
-      }
-      .hero .lead {
-        font-weight: 500;
-      }
-
-      /* ---------- Cards ---------- */
-      .card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      }
-      .card-title {
-        font-size: 1.25rem;
-      }
-      .text-primary {
-        color: var(--bronze) !important;
-      }
-      .btn-primary {
-        background-color: var(--bronze) !important;
-        border-color: var(--bronze) !important;
-      }
 
       /* ---------- Footer ---------- */
 
@@ -180,6 +134,101 @@
 
       .footer-bg {
         background-color: #ffe4e1;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        min-height: 80vh;
+        padding-top: 5rem;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+          ),
+          url('images/hero.png') center/cover no-repeat;
+      }
+      .hero .panel {
+        padding: 2.5rem 2rem;
+        max-width: 760px;
+      }
+      .hero h1 {
+        font-weight: 800;
+      }
+      .hero .lead {
+        font-weight: 500;
+      }
+
+      /*--------- Our mission section --------*/
+      .mission-section {
+        text-align: center;
+        color: var(--bronze);
+        padding: 100px 100px;
+      }
+
+      .mission-section h2 {
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .mission-section .lead {
+        max-width: 800px;
+        margin: 0 auto 60px;
+      }
+
+      .mission-card {
+        border: 1px solid var(--bronze);
+        border-radius: 15px;
+        padding: 40px 20px;
+        transition: all 0.3s ease;
+        background-color: #fff;
+      }
+
+      .mission-card:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        transform: translateY(-5px);
+      }
+
+      .mission-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+
+      .mission-title {
+        color: var(--bronze);
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+
+      /* ---------- Cards ---------- */
+
+      #products {
+        background-color: var(--cream);
+      }
+      #products h2 {
+        color: var(--brown);
+      }
+      .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+      .card-title {
+        font-size: 1.25rem;
+      }
+      .text-primary {
+        color: var(--bronze) !important;
+      }
+      .btn-primary {
+        background-color: var(--bronze) !important;
+        border-color: var(--bronze) !important;
       }
 
       /* Register form */
@@ -268,10 +317,61 @@
       </div>
     </header>
 
+    <section class="mission-section container">
+      <h2>Our Mission</h2>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="mission-card h-100">
+            <div class="mission-icon">
+              <i class="bi bi-heart"></i>
+            </div>
+            <h5 class="mission-title">Clean Beauty</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="mission-card h-100">
+            <div class="mission-icon">
+              <i class="bi bi-star"></i>
+            </div>
+            <h5 class="mission-title">Luxury Quality</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="mission-card h-100">
+            <div class="mission-icon">
+              <i class="bi bi-award"></i>
+            </div>
+            <h5 class="mission-title">Inclusive Beauty</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Products -->
     <section class="py-5" id="products">
       <div class="container text-center">
-        <h2 class="mb-3">Best Sellers</h2>
+        <h2 class="mb-5">Best Sellers</h2>
         <div class="row g-4">
           <div class="col-md-4">
             <div class="card border-0 shadow-sm h-100">
@@ -363,6 +463,15 @@
               <div class="mb-3">
                 <label class="form-label">Email</label>
                 <input type="email" class="form-control" placeholder="Email" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mobile No.</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Mobile No."
+                  maxlength="8"
+                />
               </div>
 
               <div class="text-center">
