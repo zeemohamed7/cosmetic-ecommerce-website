@@ -21,6 +21,8 @@
       defer
     ></script>
 
+
+
     <style>
       /*
            #A2844B — bronze
@@ -301,7 +303,7 @@
             </li>
           </ul>
 
-          <span class="navbar-text">Welcome, user</span>
+          <span class="navbar-text" id="user-name">Welcome, user</span>
         </div>
       </div>
     </nav>
@@ -453,6 +455,7 @@
                   type="text"
                   class="form-control"
                   placeholder="First Name"
+                  id="first-name"
                 />
               </div>
 
@@ -462,11 +465,17 @@
                   type="text"
                   class="form-control"
                   placeholder="Last Name"
+                  id="last-name"
                 />
               </div>
               <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="Email" />
+                  <input
+                          type="email"
+                          class="form-control" placeholder="Email" id="email"
+                          required
+                  >
+
               </div>
               <div class="mb-3">
                 <label class="form-label">Mobile No.</label>
@@ -475,11 +484,13 @@
                   class="form-control"
                   placeholder="Mobile No."
                   maxlength="8"
+                  id="mobile"
                 />
               </div>
 
               <div class="text-center">
-                <button type="submit" class="btn btn-brand submit-btn">
+                  <p id="validation-message"></p>
+                <button type="submit" class="btn btn-brand submit-btn" id="register-form-button">
                   Submit
                 </button>
               </div>
@@ -553,5 +564,72 @@
         </div>
       </div>
     </footer>
+    <script>
+
+        let registerButton = document.getElementById("register-form-button");
+        let validationMessage = document.getElementById("validation-message");
+        let userName = document.getElementById("user-name");
+
+        let errors = []
+
+        // https://www.geeksforgeeks.org/javascript/javascript-program-to-validate-an-email-address/
+        function valid(email) {
+            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return pattern.test(email);
+        }
+
+        registerButton.addEventListener("click", () => {
+            validationMessage.textContent = ""
+            errors = []
+            let firstName = document.getElementById("first-name");
+            let lastName = document.getElementById("last-name");
+            let email = document.getElementById("email");
+            let mobile = document.getElementById("mobile");
+
+
+            event.preventDefault();
+
+            if (!firstName.value) {
+                errors.push("First name is required");
+            } else if (firstName.value.length < 3) {
+                errors.push("First name should be at least 3 characters");
+            }
+
+            if (!lastName.value) {
+                errors.push("Last name is required");
+            } else if (lastName.value.length < 3) {
+                errors.push("Last name should be at least 3 characters");
+            }
+
+            if (!email.value) {
+                errors.push("Email is required");
+            } else {
+                console.log(valid(email));
+                !valid(email.value) ? errors.push("Email is not valid") : null;
+            }
+
+            if (!mobile.value) {
+                errors.push("Mobile number is required");
+            } else if (mobile.value.length !== 8 || isNaN(mobile.value)) {
+                errors.push("Mobile Number should have exactly 8 digits.");
+            }
+
+            if (errors.length > 0) {
+                validationMessage.innerHTML = "An error occured: ";
+                validationMessage.innerHTML += `<br>${errors.join("<br> ")}`;
+            } else {
+                userName.textContent = `Welcome, ${firstName.value}!`;
+                validationMessage.textContent = "Form submitted successfully";
+
+                // Reset form values
+                firstName.value = "";
+                lastName.value = "";
+                email.value = "";
+                mobile.value = "";
+            }
+
+        })
+
+    </script>
   </body>
 </html>
