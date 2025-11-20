@@ -9,5 +9,152 @@
     <!-- JS files -->
     <script src="./js/bootstrap.min.js" defer></script>
   </head>
-  <body></body>
+    <style>
+      /*
+#A2844B — bronze
+
+#FBF2EB — cream
+
+#FFE4E1 — pink
+
+#F2CCC6 — peach
+
+#735248 — brown
+ */
+
+      /* To override bootstrap colours */
+      :root {
+        --bronze: #a2844b;
+        --cream: #fbf2eb;
+        --pink: #ffe4e1;
+        --peach: #f2ccc6;
+        --brown: #735248;
+      }
+
+      /* ---------- Navbar ---------- */
+      .navbar-gloss {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100000;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.65),
+          rgba(255, 255, 255, 0.35)
+        );
+        backdrop-filter: blur(10px) saturate(140%);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+      .navbar {
+        color: #1f1f1f;
+      }
+      /* .navbar-gloss .nav-link:hover {
+        color: #1f1f1f;
+      } */
+
+      .navbar .nav-link {
+        background-image: linear-gradient(#1f1f1f, #1f1f1f);
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 0 2px;
+        transition: background-size 0.2s ease;
+        padding-bottom: 0.25rem;
+      }
+      .navbar .nav-link:hover,
+      .navbar .nav-link:focus,
+      .navbar .nav-link.active {
+        background-size: 100% 2px;
+      }
+
+      .btn-brand {
+        background: var(--bronze);
+        border-color: var(--bronze);
+      }
+      .btn-brand:hover {
+        background-color: var(--brown);
+      }
+      /* ---------- Hero ---------- */
+      .hero {
+        min-height: 80vh;
+        padding-top: 5rem;
+        display: grid;
+        place-items: center;
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.45)
+          ),
+          url('https://t4.ftcdn.net/jpg/02/73/55/33/360_F_273553300_sBBxIPpLSn5iC5vC8FwzFh6BJDKvUeaC.jpg')
+            center/cover no-repeat;
+      }
+      .hero .panel {
+        padding: 2.5rem 2rem;
+        max-width: 760px;
+        margin-inline: auto;
+      }
+      .hero h1 {
+        font-weight: 800;
+        letter-spacing: 0.3px;
+      }
+      .hero .lead {
+        font-weight: 500;
+        opacity: 0.95;
+      }
+
+      /* ---------- Cards ---------- */
+      .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      }
+      .card-title {
+        font-size: 1.25rem;
+      }
+      .text-primary {
+        color: #a2844b !important;
+      }
+      .btn-primary {
+        background-color: #a2844b !important;
+        border-color: #a2844b !important;
+      }
+
+      /* ---------- Footer ---------- */
+      .footer-gloss {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(245, 245, 245, 0.8)
+        );
+        backdrop-filter: blur(6px);
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .footer-link {
+        color: #232323;
+        text-decoration: none;
+      }
+      .footer-link:hover {
+        color: #353434;
+        text-decoration: underline;
+      }
+
+      .footer-bg {
+        background-color: #ffe4e1;
+      }
+
+
+    </style>
+  <body>
+    <div class="title">
+      <img src="Images/basket.svg" alt="basket">
+      <h2>Your cart</h2>
+
+    </div>
+  </body>
 </html>
