@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Celeste</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
 
-    <style>
-      /*
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celeste</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- for favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <style>
+    /*
            #A2844B — bronze
 
            #FBF2EB — cream
@@ -34,685 +31,660 @@
            #735248 — brown
             */
 
-      /* To override bootstrap colours */
-      :root {
-        --bronze: #a2844b;
-        --cream: #fbf2eb;
-        --pink: #ffe4e1;
-        --peach: #f2ccc6;
-        --brown: #735248;
-      }
+    /* To override bootstrap colours */
+    :root {
+      --bronze: #a2844b;
+      --cream: #fbf2eb;
+      --pink: #ffe4e1;
+      --peach: #f2ccc6;
+      --brown: #735248;
+    }
 
-      body {
-        font-family: 'Roboto', sans-serif !important;
-      }
+    body {
+      font-family: 'Roboto', sans-serif !important;
+    }
 
-      /* ---------- Navbar ---------- */
+    /* ---------- Navbar ---------- */
 
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100000; /* over the hero image */
-        background: var(--cream);
-      }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100000;
+      /* over the hero image */
+      background: var(--cream);
+    }
 
-      .logo {
-        width: 4rem;
-      }
+    .logo {
+      width: 4rem;
+    }
 
-      .navbar .nav-link {
-        margin-top: -0.5rem;
-        color: var(--brown);
-        background-image: linear-gradient(var(--bronze), var(--bronze));
-        background-repeat: no-repeat;
-        background-position: 50% 100%; /* underlining the navbar */
-        background-size: 0 2px;
-        transition: background-size 0.2s ease;
-        padding-bottom: 0.25rem;
-      }
+    .navbar .nav-link {
+      margin-top: -0.5rem;
+      color: var(--brown);
+      background-image: linear-gradient(var(--bronze), var(--bronze));
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      /* underlining the navbar */
+      background-size: 0 2px;
+      transition: background-size 0.2s ease;
+      padding-bottom: 0.25rem;
+    }
 
-      .navbar .nav-link:hover,
-      .navbar .nav-link:focus,
-      .navbar .nav-link.active {
-        background-size: 100% 2px;
-        color: var(--brown);
-        font-weight: 500;
-      }
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar .nav-link.active {
+      background-size: 100% 2px;
+      color: var(--brown);
+      font-weight: 500;
+    }
 
-      .btn-brand {
-        background: var(--bronze);
-        color: var(--cream);
-        border-color: var(--bronze);
-      }
+    .btn-brand {
+      background: var(--bronze);
+      color: var(--cream);
+      border-color: var(--bronze);
+    }
 
-      .btn-brand:hover {
-        background-color: var(--brown);
-      }
+    .btn-brand:hover {
+      background-color: var(--brown);
+    }
 
-      /* ---------- Footer ---------- */
+    /* ---------- Footer ---------- */
 
-      .logo-footer {
-        width: 7rem;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        margin-left: -16px;
-      }
+    .logo-footer {
+      width: 7rem;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-left: -16px;
+    }
 
-      footer h4 {
-        color: var(--bronze);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-left: -16px;
-      }
+    footer h4 {
+      color: var(--bronze);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-left: -16px;
+    }
 
-      .d-flex.align-items-center {
-        gap: 0rem;
-      }
+    .d-flex.align-items-center {
+      gap: 0rem;
+    }
 
-      .footer-gloss {
-        background: linear-gradient(
-          180deg,
+    .footer-gloss {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.8),
-          rgba(245, 245, 245, 0.8)
-        );
-        backdrop-filter: blur(6px);
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-      }
-      .footer-link {
-        color: #434343;
-        text-decoration: none;
-      }
-      .footer-link:hover {
-        color: #353434;
-        text-decoration: underline;
+          rgba(245, 245, 245, 0.8));
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .footer-link {
+      color: #434343;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #353434;
+      text-decoration: underline;
+    }
+
+    .footer-bg {
+      background-color: #ffe4e1;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 80vh;
+      padding-top: 5rem;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.45)),
+        url('images/hero.png') center/cover no-repeat;
+    }
+
+    .hero .panel {
+      padding: 2.5rem 2rem;
+      max-width: 760px;
+    }
+
+    .hero h1 {
+      font-weight: 800;
+    }
+
+    .hero .lead {
+      font-weight: 500;
+    }
+
+    /*--------- Our mission section --------*/
+    .mission-section {
+      text-align: center;
+      color: var(--bronze);
+      padding: 100px 100px;
+    }
+
+    .mission-section h2 {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .mission-section .lead {
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .mission-card {
+      border: 1px solid var(--bronze);
+      border-radius: 15px;
+      padding: 40px 20px;
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
+
+    .mission-card:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transform: translateY(-5px);
+    }
+
+    .mission-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .mission-title {
+      color: var(--bronze);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    /* ---------- Cards ---------- */
+
+    #products {
+      background-color: var(--cream);
+    }
+
+    #products h2 {
+      color: var(--brown);
+    }
+
+    .card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+    }
+
+    .text-primary {
+      color: var(--bronze) !important;
+    }
+
+    .btn-primary {
+      background-color: var(--bronze) !important;
+      border-color: var(--bronze) !important;
+    }
+
+    /*------ Register Form Container -----*/
+    #register-form-section {
+      background: var(--cream);
+    }
+
+    /* Card */
+    #register-form {
+      max-width: 500px;
+      width: 100%;
+      padding: 50px 40px;
+      background: #fff;
+      border: 1px solid var(--peach);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Header */
+    .form-header {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--bronze);
+      margin-bottom: 25px;
+    }
+
+    /* Labels */
+    #register-form label {
+      font-weight: 500;
+      color: var(--brown);
+      margin-bottom: 6px;
+    }
+
+    /* Inputs */
+    #register-form .form-control {
+      border-radius: 10px;
+      border: 1px solid #e2c6c4;
+      padding: 12px 14px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #register-form .form-control:focus {
+      border-color: var(--bronze);
+      box-shadow: 0 0 0 3px rgba(162, 132, 75, 0.15);
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      font-weight: 500;
+      background-color: var(--bronze);
+      color: #fff;
+      border: none;
+      transition: 0.25s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--brown);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* ---- Validation messages ------ */
+    #validation-message {
+      color: #b33a3a;
+      font-weight: 500;
+      background-color: #ffe4e1;
+      border-left: 4px solid var(--bronze);
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      display: none;
+      /* hidden until needed */
+    }
+
+    /* Success Message */
+    #validation-message.success {
+      color: #2e7d32;
+      background-color: #e6f4ea;
+      border-left: 4px solid #2e7d32;
+    }
+
+    /* https://www.w3schools.com/cssref/atrule_keyframes.php */
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(4px);
       }
 
-      .footer-bg {
-        background-color: #ffe4e1;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      /* ---------- Hero ---------- */
-      .hero {
-        min-height: 80vh;
-        padding-top: 5rem;
-        display: grid;
-        place-items: center;
-        position: relative;
-        overflow: hidden;
-        color: #fff;
-        text-align: center;
-        background: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.45)
-          ),
-          url('images/hero.png') center/cover no-repeat;
-      }
-      .hero .panel {
-        padding: 2.5rem 2rem;
-        max-width: 760px;
-      }
-      .hero h1 {
-        font-weight: 800;
-      }
-      .hero .lead {
-        font-weight: 500;
-      }
+    .show-message {
+      display: block !important;
+      animation: fadeIn 0.3s ease;
+    }
+  </style>
+</head>
 
-      /*--------- Our mission section --------*/
-      .mission-section {
-        text-align: center;
-        color: var(--bronze);
-        padding: 100px 100px;
-      }
+<body>
+  <!-- Navbar: copy paste this in all pages-->
+  <nav class="navbar navbar-expand-lg navbar">
+    <div class="container">
+      <a class="navbar-brand px-4" href="index.html"><img src="images/logo-without-name.png" alt="Logo"
+          class="logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="science.html">Science</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="making-of.html">Making Of</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="our-story.html">Our Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
 
-      .mission-section h2 {
-        font-weight: 600;
-        margin-bottom: 20px;
-      }
+        <span class="navbar-text" id="user-name">Welcome, user</span>
+      </div>
+    </div>
+  </nav>
 
-      .mission-section .lead {
-        max-width: 800px;
-        margin: 0 auto 60px;
-      }
+  <!-- Hero -->
+  <header class="hero">
+    <div class="panel">
+      <h1 class="display-4 mb-3">Glow, every day.</h1>
+      <p class="lead mb-4">
+        Clean skincare & beauty, crafted for radiant confidence.
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-2">
+        <a href="#" class="btn btn-lg btn-brand text-white px-4">Shop Now</a>
+      </div>
+    </div>
+  </header>
+  <!-- Mission -->
+  <section class="mission-section container">
+    <h2>Our Mission</h2>
+    <p class="lead">
+      We create high-quality beauty products that are clean, luxurious, and
+      made for everyone. Our mission is simple: elevate your routine with
+      formulas that feel good, look good, and do good.
+    </p>
 
-      .mission-card {
-        border: 1px solid var(--bronze);
-        border-radius: 15px;
-        padding: 40px 20px;
-        transition: all 0.3s ease;
-        background-color: #fff;
-      }
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="mission-card h-100">
+          <div class="mission-icon">
+            <img src="images/clean-hands-svgrepo-com (1).svg" class="value-icon" />
+          </div>
 
-      .mission-card:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        transform: translateY(-5px);
-      }
+          <h5 class="mission-title">Clean Beauty</h5>
 
-      .mission-icon {
-        font-size: 40px;
-        margin-bottom: 15px;
-      }
+          <p>
+            Gentle, safe, and transparent formulas designed to nourish your
+            skin without unnecessary additives.
+          </p>
+        </div>
+      </div>
 
-      .mission-title {
-        color: var(--bronze);
-        font-weight: 500;
-        margin-bottom: 15px;
-      }
+      <div class="col-md-4">
+        <div class="mission-card h-100">
+          <div class="mission-icon">
+            <img src="images/woman-bag-3-svgrepo-com (4).svg" class="value-icon" />
+          </div>
+          <h5 class="mission-title">Luxury Quality</h5>
+          <p>
+            Premium ingredients and refined formulations that deliver a
+            smooth, high-end experience every time.
+          </p>
+        </div>
+      </div>
 
-      /* ---------- Cards ---------- */
+      <div class="col-md-4">
+        <div class="mission-card h-100">
+          <div class="mission-icon">
+            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M9.47963 6.8252C7.66038 7.50672 6.75075 7.84748 6.641 8.55405C6.53124 9.26062 7.29404 9.86506 8.81965 11.0739L9.21434 11.3867C9.64787 11.7302 9.86464 11.902 9.9889 12.1361C10.1132 12.3702 10.1309 12.6402 10.1662 13.1801L10.1984 13.6717C10.3229 15.5717 10.3852 16.5217 11.0438 16.8493C11.7024 17.1768 12.5212 16.6649 14.1588 15.6412L14.5825 15.3763C15.0479 15.0854 15.2805 14.9399 15.5467 14.8999C15.8128 14.86 16.0822 14.93 16.621 15.07L17.1116 15.1975C19.0078 15.6903 19.9559 15.9367 20.4727 15.4325C20.9895 14.9284 20.7328 14.0076 20.2193 12.166M20.6654 9.29403C21.7128 7.69854 22.2365 6.90079 21.8973 6.26168C21.5581 5.62258 20.5806 5.56537 18.6256 5.45095L18.1198 5.42135C17.5643 5.38884 17.2865 5.37259 17.0452 5.25261C16.804 5.13263 16.6265 4.9225 16.2716 4.50226L15.9486 4.11967C14.6997 2.64083 14.0753 1.90141 13.3488 2.01056C12.6224 2.11971 12.275 3.00516 11.5803 4.77604"
+                  stroke="#A2844B" stroke-width="1.5" stroke-linecap="round"></path>
+                <path
+                  d="M6.59527 8.55078C3.48192 10.6857 1.09828 14.7691 2.33125 21.9998C3.42268 18.9857 6.71261 16.5716 10.3877 15.4097"
+                  stroke="#A2844B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+            </svg>
+          </div>
+          <h5 class="mission-title">Inclusive Beauty</h5>
+          <p>
+            Products crafted to flatter all skin tones and celebrate every
+            person’s unique beauty.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      #products {
-        background-color: var(--cream);
-      }
-      #products h2 {
-        color: var(--brown);
-      }
-      .card {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-      }
-      .card-title {
-        font-size: 1.25rem;
-      }
-      .text-primary {
-        color: var(--bronze) !important;
-      }
-      .btn-primary {
-        background-color: var(--bronze) !important;
-        border-color: var(--bronze) !important;
-      }
+  <!-- Products -->
+  <section class="py-5" id="products">
+    <div class="container text-center">
+      <h2 class="mb-5" style="color: var(--bronze)">Best Sellers</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="images/celeste-lipstick.png" class="card-img-top" alt="Celeste product" />
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold text-primary">
+                Celeste Signature Velvet Lipstick
+              </h5>
+              <p class="card-text text-secondary">
+                A timeless red designed for every skin tone.
+              </p>
+              <a href="product-detail.html" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="images/celeste-lashserum.png" class="card-img-top" alt="Celeste product" />
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold text-primary">
+                Celeste's Lash & Brow Serum
+              </h5>
+              <p class="card-text text-secondary">
+                A lightweight, water-based lash and brow serum.
+              </p>
+              <a href="product-detail.html" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <img src="images/celeste-lip-serum.jpeg" class="card-img-top" alt="Celeste product" />
+            <div class="card-body text-center">
+              <h5 class="card-title fw-semibold text-primary">
+                Celeste Botanical Lip Serum
+              </h5>
+              <p class="card-text text-secondary">
+                A hydrating lip elixir infused with hyaluronic micro-pearls and rose extract.
+              </p>
+              <a href="product-detail.html" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Form -->
+  <section class="min-vh-50 d-flex justify-content-center align-items-center py-5" id="register-form-section">
+    <div class="p-4 rounded shadow-sm" id="register-form">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+          <h4 class="form-header" style="color: #353434">
+            Register Your Interest
+          </h4>
+          <form class="mx-auto">
+            <div class="mb-3">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-control" placeholder="First Name" id="first-name" />
+            </div>
 
-      /*------ Register form -----*/
+            <div class="mb-3">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last Name" id="last-name" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="Email" id="email" required />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mobile No.</label>
+              <input type="text" class="form-control" placeholder="Mobile No." maxlength="8" id="mobile" />
+            </div>
 
-      .form-header {
-        text-align: center;
-        padding: 20px;
-      }
-      #register-form {
-        border: solid var(--pink) 2px;
-        border-radius: 6px;
-        background: white;
-        max-width: 500px;
-        width: 100%;
-      }
-      .submit-btn {
-        background-color: var(--peach);
-        color: #fff;
-        border: 0;
-      }
-      .submit-btn:hover {
-        background-color: var(--pink);
-        border: 0;
-        color: #919191;
-      }
+            <div class="text-center">
+              <p id="validation-message"></p>
+              <button type="submit" class="btn btn-brand submit-btn" id="register-form-button">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      .form-header {
-        color: var(--peach);
-      }
+  <!-- Footer: copy paste this in all pages -->
+  <footer class="footer-gloss footer-bg">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center gap-1">
+            <img src="images/logo-without-bg.png" alt="Logo" class="logo-footer" />
+            <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
+          </div>
 
-      /* ---- Validation messages ------ */
-      #validation-message {
-        color: #b33a3a;
-        font-weight: 500;
-        background-color: #ffe4e1;
-        border-left: 4px solid var(--bronze);
-        padding: 10px 14px;
-        border-radius: 6px;
-        margin-bottom: 15px;
-        display: none; /* hidden until needed */
-      }
+          <p class="text-secondary mb-4">
+            Where clean formulas meet elegant simplicity to enhance your
+            natural radiance. Every product is designed to feel soft,
+            effortless, and beautifully you.
+          </p>
+        </div>
 
-      /* Success Message */
-      #validation-message.success {
-        color: #2e7d32;
-        background-color: #e6f4ea;
-        border-left: 4px solid #2e7d32;
-      }
-      /* https://www.w3schools.com/cssref/atrule_keyframes.php */
-      /* Fade-in animation */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(4px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .show-message {
-        display: block !important;
-        animation: fadeIn 0.3s ease;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar: copy paste this in all pages-->
-    <nav class="navbar navbar-expand-lg navbar">
-      <div class="container">
-        <a class="navbar-brand px-4" href="index.html"
-          ><img src="images/logo-without-name.png" alt="Logo" class="logo"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#nav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-muted mb-3">Shop</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a class="footer-link" href="#">Makeup Collection</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Skincare Essentials</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="science.html">Science</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="making-of.html">Making Of</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="our-story.html">Our Story</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html">Cart</a>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Science &amp; Research</a>
             </li>
           </ul>
+        </div>
 
-          <span class="navbar-text" id="user-name">Welcome, user</span>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-muted mb-3">Contact</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-envelope me-2 text-secondary"></i>
+              <a class="footer-link" href="mailto:hello@celeste.com">hello@celeste.com</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-telephone me-2 text-secondary"></i>
+              <a class="footer-link">+973 33336666</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-geo-alt me-2 text-secondary"></i>
+              <span class="text-secondary">Bahrain Polytechnic, Isa Town</span>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
 
-    <!-- Hero -->
-    <header class="hero">
-      <div class="panel">
-        <h1 class="display-4 mb-3">Glow, every day.</h1>
-        <p class="lead mb-4">
-          Clean skincare & beauty, crafted for radiant confidence.
-        </p>
-        <div class="d-flex justify-content-center flex-wrap gap-2">
-          <a href="#" class="btn btn-lg btn-brand text-white px-4">Shop Now</a>
-        </div>
+      <hr class="my-4 opacity-25" />
+      <div class="small text-secondary">
+        &copy; 2025 Celeste Cosmetics. All rights reserved.
       </div>
-    </header>
+    </div>
+  </footer>
+  <!-- JS Script for setting username -->
+  <script>
 
-    <section class="mission-section container">
-      <h2>Our Mission</h2>
-      <p class="lead">
-        We create high-quality beauty products that are clean, luxurious, and
-        made for everyone. Our mission is simple: elevate your routine with
-        formulas that feel good, look good, and do good.
-      </p>
+    // Getting username
+    let userName = document.getElementById('user-name')
 
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="mission-card h-100">
-            <div class="mission-icon">
-              <img
-                src="images/clean-hands-svgrepo-com (1).svg"
-                class="value-icon"
-              />
-            </div>
-
-            <h5 class="mission-title">Clean Beauty</h5>
-
-            <p>
-              Gentle, safe, and transparent formulas designed to nourish your
-              skin without unnecessary additives.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="mission-card h-100">
-            <div class="mission-icon">
-              <img
-                src="images/woman-bag-3-svgrepo-com (4).svg"
-                class="value-icon"
-              />
-            </div>
-            <h5 class="mission-title">Luxury Quality</h5>
-            <p>
-              Premium ingredients and refined formulations that deliver a
-              smooth, high-end experience every time.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="mission-card h-100">
-            <div class="mission-icon">
-              <svg
-                width="64px"
-                height="64px"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path
-                    d="M9.47963 6.8252C7.66038 7.50672 6.75075 7.84748 6.641 8.55405C6.53124 9.26062 7.29404 9.86506 8.81965 11.0739L9.21434 11.3867C9.64787 11.7302 9.86464 11.902 9.9889 12.1361C10.1132 12.3702 10.1309 12.6402 10.1662 13.1801L10.1984 13.6717C10.3229 15.5717 10.3852 16.5217 11.0438 16.8493C11.7024 17.1768 12.5212 16.6649 14.1588 15.6412L14.5825 15.3763C15.0479 15.0854 15.2805 14.9399 15.5467 14.8999C15.8128 14.86 16.0822 14.93 16.621 15.07L17.1116 15.1975C19.0078 15.6903 19.9559 15.9367 20.4727 15.4325C20.9895 14.9284 20.7328 14.0076 20.2193 12.166M20.6654 9.29403C21.7128 7.69854 22.2365 6.90079 21.8973 6.26168C21.5581 5.62258 20.5806 5.56537 18.6256 5.45095L18.1198 5.42135C17.5643 5.38884 17.2865 5.37259 17.0452 5.25261C16.804 5.13263 16.6265 4.9225 16.2716 4.50226L15.9486 4.11967C14.6997 2.64083 14.0753 1.90141 13.3488 2.01056C12.6224 2.11971 12.275 3.00516 11.5803 4.77604"
-                    stroke="#A2844B"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                  <path
-                    d="M6.59527 8.55078C3.48192 10.6857 1.09828 14.7691 2.33125 21.9998C3.42268 18.9857 6.71261 16.5716 10.3877 15.4097"
-                    stroke="#A2844B"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-            <h5 class="mission-title">Inclusive Beauty</h5>
-            <p>
-              Products crafted to flatter all skin tones and celebrate every
-              person’s unique beauty.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products -->
-    <section class="py-5" id="products">
-      <div class="container text-center">
-        <h2 class="mb-5" style="color: var(--bronze)">Best Sellers</h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100">
-              <img
-                src="images/amanda-dalbjorn-t7WrWaewbtw-unsplash.jpg"
-                class="card-img-top"
-                alt="Celeste product"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title fw-semibold text-primary">
-                  Radiant Foundation
-                </h5>
-                <p class="card-text text-secondary">
-                  Lightweight coverage that blends seamlessly for a natural
-                  glow.
-                </p>
-                <a href="#" class="btn btn-primary">View Details</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100">
-              <img
-                src="images/amanda-dalbjorn-t7WrWaewbtw-unsplash.jpg"
-                class="card-img-top"
-                alt="Celeste product"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title fw-semibold text-primary">
-                  Radiant Foundation
-                </h5>
-                <p class="card-text text-secondary">
-                  Lightweight coverage that blends seamlessly for a natural
-                  glow.
-                </p>
-                <a href="#" class="btn btn-primary">View Details</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card border-0 shadow-sm h-100">
-              <img
-                src="images/amanda-dalbjorn-t7WrWaewbtw-unsplash.jpg"
-                class="card-img-top"
-                alt="Celeste product"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title fw-semibold text-primary">
-                  Radiant Foundation
-                </h5>
-                <p class="card-text text-secondary">
-                  Lightweight coverage that blends seamlessly for a natural
-                  glow.
-                </p>
-                <a href="#" class="btn btn-primary">View Details</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="min-vh-50 d-flex justify-content-center align-items-center py-5"
-      id="register-form-section"
-    >
-      <div class="p-4 rounded shadow-sm" id="register-form">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-            <h4 class="form-header" style="color: #353434">
-              Register Your Interest
-            </h4>
-            <form class="mx-auto">
-              <div class="mb-3">
-                <label class="form-label">First Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="First Name"
-                  id="first-name"
-                />
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Last Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Last Name"
-                  id="last-name"
-                />
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Email"
-                  id="email"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label class="form-label">Mobile No.</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Mobile No."
-                  maxlength="8"
-                  id="mobile"
-                />
-              </div>
-
-              <div class="text-center">
-                <p id="validation-message"></p>
-                <button
-                  type="submit"
-                  class="btn btn-brand submit-btn"
-                  id="register-form-button"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer: copy paste this in all pages -->
-    <footer class="footer-gloss footer-bg">
-      <div class="container py-5">
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <div class="d-flex align-items-center gap-1">
-              <img
-                src="images/logo-without-bg.png"
-                alt="Logo"
-                class="logo-footer"
-              />
-              <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
-            </div>
-
-            <p class="text-secondary mb-4">
-              Where clean formulas meet elegant simplicity to enhance your
-              natural radiance. Every product is designed to feel soft,
-              effortless, and beautifully you.
-            </p>
-          </div>
-
-          <div class="col-6 col-lg-3">
-            <h6 class="text-muted mb-3">Shop</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a class="footer-link" href="#">Makeup Collection</a>
-              </li>
-              <li class="mb-2">
-                <a class="footer-link" href="#">Skincare Essentials</a>
-              </li>
-              <li class="mb-2">
-                <a class="footer-link" href="#">Science &amp; Research</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-lg-4">
-            <h6 class="text-muted mb-3">Contact</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <i class="bi bi-envelope me-2 text-secondary"></i>
-                <a class="footer-link" href="mailto:hello@celeste.com"
-                  >hello@celeste.com</a
-                >
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-telephone me-2 text-secondary"></i>
-                <a class="footer-link">+973 33336666</a>
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-geo-alt me-2 text-secondary"></i>
-                <span class="text-secondary"
-                  >Bahrain Polytechnic, Isa Town</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <hr class="my-4 opacity-25" />
-        <div class="small text-secondary">
-          &copy; 2025 Celeste Cosmetics. All rights reserved.
-        </div>
-      </div>
-    </footer>
-    <!-- Script for username: copy paste in all pages -->
-    <script>
-      let userName = document.getElementById('user-name')
-
-      function getUser() {
-        let username = localStorage.getItem('username')
-        if (username) {
-          userName.textContent = `Welcome, ${username}!`
-        } else {
-          userName.textContent = `Welcome, user!`
-        }
+    function getUser() {
+      let username = localStorage.getItem('username')
+      if (username) {
+        userName.textContent = `Welcome, ${username}!`
+      } else {
+        userName.textContent = `Welcome, user!`
       }
-      getUser()
-      let registerButton = document.getElementById('register-form-button')
-      let validationMessage = document.getElementById('validation-message')
+    }
+    getUser()
 
-      let errors = []
+    // Form submission and Setting username
+    let registerButton = document.getElementById('register-form-button')
+    let validationMessage = document.getElementById('validation-message')
 
-      // https://www.geeksforgeeks.org/javascript/javascript-program-to-validate-an-email-address/
-      function valid(email) {
-        // regex requiring @ and at least 2 letters after the dot
-        const pattern = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
-        return pattern.test(email)
+    let errors = []
+
+    // https://www.geeksforgeeks.org/javascript/javascript-program-to-validate-an-email-address/
+    function valid(email) {
+      // regex requiring @ and at least 2 letters after the dot
+      const pattern = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
+      return pattern.test(email)
+    }
+
+    registerButton.addEventListener('click', () => {
+      // clear validation message
+      validationMessage.classList.remove('success')
+      validationMessage.classList.remove('show-message')
+      validationMessage.innerHTML = ''
+
+      errors = []
+      let firstName = document.getElementById('first-name')
+      let lastName = document.getElementById('last-name')
+      let email = document.getElementById('email')
+      let mobile = document.getElementById('mobile')
+
+      event.preventDefault()
+
+      if (!firstName.value) {
+        errors.push('First name is required')
+      } else if (firstName.value.length < 3) {
+        errors.push('First name should be at least 3 characters')
       }
 
-      registerButton.addEventListener('click', () => {
-        // clear validation message
-        validationMessage.classList.remove('success')
-        validationMessage.classList.remove('show-message')
-        validationMessage.innerHTML = ''
+      if (!lastName.value) {
+        errors.push('Last name is required')
+      } else if (lastName.value.length < 3) {
+        errors.push('Last name should be at least 3 characters')
+      }
 
-        errors = []
-        let firstName = document.getElementById('first-name')
-        let lastName = document.getElementById('last-name')
-        let email = document.getElementById('email')
-        let mobile = document.getElementById('mobile')
+      if (!email.value) {
+        errors.push('Email is required')
+      } else {
+        !valid(email.value) ? errors.push('Email is not valid') : null
+      }
 
-        event.preventDefault()
+      if (!mobile.value) {
+        errors.push('Mobile number is required')
+      } else if (mobile.value.length !== 8 || isNaN(mobile.value)) {
+        errors.push('Mobile Number should have exactly 8 digits.')
+      }
 
-        if (!firstName.value) {
-          errors.push('First name is required')
-        } else if (firstName.value.length < 3) {
-          errors.push('First name should be at least 3 characters')
-        }
+      if (errors.length > 0) {
+        validationMessage.classList.add('show-message')
+        validationMessage.innerHTML =
+          `<strong>Please fix the following:</strong><br>` +
+          errors.join('<br>')
+      } else {
+        validationMessage.classList.add('success', 'show-message')
+        validationMessage.textContent = 'Form submitted successfully!'
+        localStorage.setItem('username', firstName.value)
+        // Reset form values
+        firstName.value = ''
+        lastName.value = ''
+        email.value = ''
+        mobile.value = ''
+      }
+    })
+  </script>
+</body>
 
-        if (!lastName.value) {
-          errors.push('Last name is required')
-        } else if (lastName.value.length < 3) {
-          errors.push('Last name should be at least 3 characters')
-        }
-
-        if (!email.value) {
-          errors.push('Email is required')
-        } else {
-          !valid(email.value) ? errors.push('Email is not valid') : null
-        }
-
-        if (!mobile.value) {
-          errors.push('Mobile number is required')
-        } else if (mobile.value.length !== 8 || isNaN(mobile.value)) {
-          errors.push('Mobile Number should have exactly 8 digits.')
-        }
-
-        if (errors.length > 0) {
-          validationMessage.classList.add('show-message')
-          validationMessage.innerHTML =
-            `<strong>Please fix the following:</strong><br>` +
-            errors.join('<br>')
-        } else {
-          validationMessage.classList.add('success', 'show-message')
-          validationMessage.textContent = 'Form submitted successfully!'
-          localStorage.setItem('username', firstName.value)
-          // Reset form values
-          firstName.value = ''
-          lastName.value = ''
-          email.value = ''
-          mobile.value = ''
-        }
-      })
-    </script>
-  </body>
 </html>

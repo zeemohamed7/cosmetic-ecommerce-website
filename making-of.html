@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Celeste</title>
-    <!-- CSS stylesheets -->
-    <link rel="stylesheet" href="./css//bootstrap.min.css" />
-    <style>
-      /*
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Celeste</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  <style>
+    /*
            #A2844B — bronze
 
            #FBF2EB — cream
@@ -19,432 +34,423 @@
            #735248 — brown
             */
 
-      /* To override bootstrap colours */
-      :root {
-        --bronze: #a2844b;
-        --cream: #fbf2eb;
-        --pink: #ffe4e1;
-        --peach: #f2ccc6;
-        --brown: #735248;
-      }
+    /* To override bootstrap colours */
+    :root {
+      --bronze: #a2844b;
+      --cream: #fbf2eb;
+      --pink: #ffe4e1;
+      --peach: #f2ccc6;
+      --brown: #735248;
+    }
 
-      body {
-        font-family: 'Roboto', sans-serif !important;
-      }
+    body {
+      font-family: 'Roboto', sans-serif !important;
+    }
 
-      /* ---------- Navbar ---------- */
+    /* ---------- Navbar ---------- */
 
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100000; /* over the hero image */
-        background: var(--cream);
-      }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100000;
+      /* over the hero image */
+      background: var(--cream);
+    }
 
-      .logo {
-        width: 4rem;
-      }
+    .logo {
+      width: 4rem;
+    }
 
-      .navbar .nav-link {
-        margin-top: -0.5rem;
-        color: var(--brown);
-        background-image: linear-gradient(var(--bronze), var(--bronze));
-        background-repeat: no-repeat;
-        background-position: 50% 100%; /* underlining the navbar */
-        background-size: 0 2px;
-        transition: background-size 0.2s ease;
-        padding-bottom: 0.25rem;
-      }
+    .navbar .nav-link {
+      margin-top: -0.5rem;
+      color: var(--brown);
+      background-image: linear-gradient(var(--bronze), var(--bronze));
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      /* underlining the navbar */
+      background-size: 0 2px;
+      transition: background-size 0.2s ease;
+      padding-bottom: 0.25rem;
+    }
 
-      .navbar .nav-link:hover,
-      .navbar .nav-link:focus,
-      .navbar .nav-link.active {
-        background-size: 100% 2px;
-        color: var(--brown);
-        font-weight: 500;
-      }
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar .nav-link.active {
+      background-size: 100% 2px;
+      color: var(--brown);
+      font-weight: 500;
+    }
 
-      .btn-brand {
-        background: var(--bronze);
-        color: var(--cream);
-        border-color: var(--bronze);
-      }
+    .btn-brand {
+      background: var(--bronze);
+      color: var(--cream);
+      border-color: var(--bronze);
+    }
 
-      .btn-brand:hover {
-        background-color: var(--brown);
-      }
+    .btn-brand:hover {
+      background-color: var(--brown);
+    }
 
-      /* ---------- Footer ---------- */
+    /* ---------- Footer ---------- */
 
-      .logo-footer {
-        width: 7rem;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        margin-left: -16px;
-      }
+    .logo-footer {
+      width: 7rem;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-left: -16px;
+    }
 
-      footer h4 {
-        color: var(--bronze);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-left: -16px;
-      }
+    footer h4 {
+      color: var(--bronze);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-left: -16px;
+    }
 
-      .d-flex.align-items-center {
-        gap: 0rem;
-      }
+    .d-flex.align-items-center {
+      gap: 0rem;
+    }
 
-      .footer-gloss {
-        background: linear-gradient(
-          180deg,
+    .footer-gloss {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.8),
-          rgba(245, 245, 245, 0.8)
-        );
-        backdrop-filter: blur(6px);
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-      }
-      .footer-link {
-        color: #434343;
-        text-decoration: none;
-      }
-      .footer-link:hover {
-        color: #353434;
-        text-decoration: underline;
-      }
+          rgba(245, 245, 245, 0.8));
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
 
-      .footer-bg {
-        background-color: #ffe4e1;
-      }
+    .footer-link {
+      color: #434343;
+      text-decoration: none;
+    }
 
-      /* ------- Mockups section --------- */
+    .footer-link:hover {
+      color: #353434;
+      text-decoration: underline;
+    }
 
-      .mockups-section {
-        text-align: center;
-        padding: 100px 0 80px;
-      }
+    .footer-bg {
+      background-color: #ffe4e1;
+    }
 
-      .mockups-section h2 {
-        color: var(--brown);
-        margin-bottom: 20px;
-      }
+    /* ------- Mockups section --------- */
 
-      .mockup-box {
-        width: 100%;
-        max-width: 380px;
-        height: 260px;
-        border: 1px solid var(--bronze);
-        border-radius: 12px;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        transition: transform 0.2s ease;
-      }
+    .mockups-section {
+      text-align: center;
+      padding: 100px 0 80px;
+    }
 
-      .mockup-box:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      }
+    .mockups-section h2 {
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
 
-      .mockup-box img {
-        width: 100%;
-        object-fit: contain;
-      }
+    .mockup-box {
+      width: 100%;
+      max-width: 380px;
+      height: 260px;
+      border: 1px solid var(--bronze);
+      border-radius: 12px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
 
-      .mockup-caption {
-        color: var(--brown);
-        font-weight: 500;
-        margin-top: 10px;
-      }
+    .mockup-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
 
-      /* ------- Justifications Section ------- */
-      .justification-section {
-        padding: 80px 0;
-        background-color: var(--cream);
-      }
+    .mockup-box img {
+      width: 100%;
+      object-fit: contain;
+    }
 
-      .justification-section h2 {
-        text-align: center;
-        color: var(--brown);
-        margin-bottom: 50px;
-      }
+    .mockup-caption {
+      color: var(--brown);
+      font-weight: 500;
+      margin-top: 10px;
+    }
 
-      .brand-palette img {
-        max-width: 700px;
-        border: 1px solid #e5d7e7;
-        border-radius: 12px;
-        background-color: #fff;
-        padding: 10px;
-      }
+    /* ------- Justifications Section ------- */
+    .justification-section {
+      padding: 80px 0;
+      background-color: var(--cream);
+    }
 
-      .justification-card {
-        background-color: #fff;
-        border: 2px solid var(--bronze);
-        border-radius: 10px;
-        padding: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        transition: box-shadow 0.2s ease;
-      }
+    .justification-section h2 {
+      text-align: center;
+      color: var(--brown);
+      margin-bottom: 50px;
+    }
 
-      .justification-card:hover {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      }
+    .brand-palette img {
+      max-width: 700px;
+      border: 1px solid #e5d7e7;
+      border-radius: 12px;
+      background-color: #fff;
+      padding: 10px;
+    }
 
-      .justification-card h5 {
-        color: var(--bronze);
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-    </style>
-    <!-- JS files -->
-    <script src="./js/bootstrap.min.js" defer></script>
-  </head>
-  <body>
-    <!-- Navbar: copy paste this in all pages-->
-    <nav class="navbar navbar-expand-lg navbar">
-      <div class="container">
-        <a class="navbar-brand px-4" href="index.html"
-          ><img src="images/logo-without-name.png" alt="Logo" class="logo"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#nav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="nav" class="collapse navbar-collapse">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="science.html">Science</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="making-of.html">Making Of</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="our-story.html">Our Story</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html">Cart</a>
-            </li>
-          </ul>
+    .justification-card {
+      background-color: #fff;
+      border: 2px solid var(--bronze);
+      border-radius: 10px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      transition: box-shadow 0.2s ease;
+    }
 
-          <span class="navbar-text">Welcome, user</span>
+    .justification-card:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .justification-card h5 {
+      color: var(--bronze);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  </style>
+  <!-- JS files -->
+  <script src="./js/bootstrap.min.js" defer></script>
+</head>
+
+<body>
+  <!-- Navbar: copy paste this in all pages-->
+  <nav class="navbar navbar-expand-lg navbar">
+    <div class="container">
+      <a class="navbar-brand px-4" href="index.html"><img src="images/logo-without-name.png" alt="Logo"
+          class="logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="science.html">Science</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="making-of.html">Making Of</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="our-story.html">Our Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
+
+        <span class="navbar-text" id="user-name">Welcome, user</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mockups -->
+  <section class="mockups-section">
+    <h2>Design Mockups</h2>
+    <p class="text-muted mb-5" style="max-width: 600px; margin: 0 auto">
+      The Celeste color palette reflects sophistication, calmness, and
+      inclusivity. It combines soft lavenders, warm neutrals, and subtle
+      contrasts for a modern and elegant feel.
+    </p>
+
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <div class="mockup-box">
+            <a href="images/homepage-mockup.png" target="_blank">
+              <img src="images/homepage-mockup.png" alt="Homepage Mockup" />
+            </a>
+          </div>
+          <p class="mockup-caption">Homepage</p>
+        </div>
+
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <div class="mockup-box">
+            <a href="images/productdetail-mockup.png" target="_blank">
+              <img src="images/productdetail-mockup.png" alt="Product Detail Mockup" />
+            </a>
+          </div>
+          <p class="mockup-caption">Product Detail Page</p>
+        </div>
+
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <div class="mockup-box">
+            <a href="images/shoppingcart-mockup.png" target="_blank">
+              <img src="images/shoppingcart-mockup.png" alt="Shopping Cart Mockup" />
+            </a>
+          </div>
+          <p class="mockup-caption">Shopping Cart Page</p>
+        </div>
+
+        <div class="col-md-6 d-flex flex-column align-items-center">
+          <div class="mockup-box">
+            <a href="images/science-mockup.png" target="_blank">
+              <img src="images/science-mockup.png" alt="Science Page Mockup" />
+            </a>
+          </div>
+          <p class="mockup-caption">Science Page</p>
         </div>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <!-- Mockups -->
-    <section class="mockups-section">
-      <h2>Design Mockups</h2>
-      <p class="text-muted mb-5" style="max-width: 600px; margin: 0 auto">
-        The Celeste color palette reflects sophistication, calmness, and
-        inclusivity. It combines soft lavenders, warm neutrals, and subtle
-        contrasts for a modern and elegant feel.
-      </p>
+  <!-- Justifications -->
+  <section class="justification-section">
+    <div class="container">
+      <h2>Design & Code Justifications</h2>
 
-      <div class="container">
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 d-flex flex-column align-items-center">
-            <div class="mockup-box">
-              <a href="images/homepage-mockup.png" target="_blank">
-                <img src="images/homepage-mockup.png" alt="Homepage Mockup" />
-              </a>
-            </div>
-            <p class="mockup-caption">Homepage</p>
-          </div>
-
-          <div class="col-md-6 d-flex flex-column align-items-center">
-            <div class="mockup-box">
-              <a href="images/productdetail-mockup.png" target="_blank">
-                <img
-                  src="images/productdetail-mockup.png"
-                  alt="Product Detail Mockup"
-                />
-              </a>
-            </div>
-            <p class="mockup-caption">Product Detail Page</p>
-          </div>
-
-          <div class="col-md-6 d-flex flex-column align-items-center">
-            <div class="mockup-box">
-              <a href="images/shoppingcart-mockup.png" target="_blank">
-                <img
-                  src="images/shoppingcart-mockup.png"
-                  alt="Shopping Cart Mockup"
-                />
-              </a>
-            </div>
-            <p class="mockup-caption">Shopping Cart Page</p>
-          </div>
-
-          <div class="col-md-6 d-flex flex-column align-items-center">
-            <div class="mockup-box">
-              <a href="images/science-mockup.png" target="_blank">
-                <img
-                  src="images/science-mockup.png"
-                  alt="Science Page Mockup"
-                />
-              </a>
-            </div>
-            <p class="mockup-caption">Science Page</p>
-          </div>
+      <!-- Brand Palette -->
+      <div class="text-center mb-5">
+        <h4 class="mb-3" style="color: var(--bronze)">Our Brand Palette</h4>
+        <p class="text-muted mb-4" style="max-width: 600px; margin: 0 auto">
+          The Celeste color palette reflects sophistication, calmness, and
+          inclusivity. It balances warmth and softness to evoke modern
+          femininity and trust.
+        </p>
+        <div class="brand-palette">
+          <img src="images/brand-pallete.png" alt="Celeste Brand Palette" class="img-fluid rounded shadow-sm" />
         </div>
       </div>
-    </section>
 
-    <!-- Justifications -->
-    <section class="justification-section">
-      <div class="container">
-        <h2>Design & Code Justifications</h2>
-
-        <!-- Brand Palette -->
-        <div class="text-center mb-5">
-          <h4 class="mb-3" style="color: var(--bronze)">Our Brand Palette</h4>
-          <p class="text-muted mb-4" style="max-width: 600px; margin: 0 auto">
-            The Celeste color palette reflects sophistication, calmness, and
-            inclusivity. It balances warmth and softness to evoke modern
-            femininity and trust.
-          </p>
-          <div class="brand-palette">
-            <img
-              src="images/brand-pallete.png"
-              alt="Celeste Brand Palette"
-              class="img-fluid rounded shadow-sm"
-            />
-          </div>
-        </div>
-
-        <!-- Justification Boxes -->
-        <div class="row g-4 align-items-stretch">
-          <div class="col-lg-6 d-flex">
-            <div class="justification-card">
-              <h5>a) Impact of Design and Color Choices</h5>
-              <p>
-                The color scheme of Celeste consists of bronze #A2844B, cream
-                #FBF2EB, soft pink #FFE4E1, peach #F2CCC6, and deep brown
-                #735248. This color combination will convey serenity,
-                femininity, and opulence. These colors provide warmth to the
-                user's experience of browsing cosmetic products. Warm neutrals
-                serve as a soft background which calls attention to imagery
-                without overwhelming the user, while the deep brown shows great
-                contrast for very readable text. Application of these colors to
-                buttons, headings, and interface elements reinforces brand
-                identity through consistency, strengthens visual hierarchy, and
-                conveys a sense of user trust. The palette in general directs
-                attention to key content, raises product presentation, and
-                reinforces Celeste's brand message: elegant yet inclusive.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6 d-flex">
-            <div class="justification-card">
-              <h5>
-                b) Impact of HTML, CSS, JS, and Bootstrap on Maintainability
-              </h5>
-              <p>
-                Semantic HTML5 provides a clear document structure that makes
-                the code more understandable and easier to update from a
-                long-term perspective for any developer. CSS variables are
-                defined under the: root, which means it unifies everything on
-                the theme and allows developers to change visual properties
-                globally right from one place. Using the rem unit scale, it will
-                create a responsive scaling without rewriting styles. Modular
-                class naming keeps code organized and predictable. Bootstrap
-                adds to maintainability by providing a robust grid and reusing
-                components; this reduces the need to write custom CSS, thereby
-                reducing the risk of inconsistent layouts. JavaScript is used as
-                little as possible and is modular, enabling interactive features
-                while maintaining performance. Combined, these technologies
-                ensure that the website is scalable, easy to modify, and
-                maintainable in the long term.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Footer: copy paste this in all pages -->
-    <footer class="footer-gloss footer-bg">
-      <div class="container py-5">
-        <div class="row g-4">
-          <div class="col-lg-5">
-            <div class="d-flex align-items-center gap-1">
-              <img
-                src="images/logo-without-bg.png"
-                alt="Logo"
-                class="logo-footer"
-              />
-              <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
-            </div>
-
-            <p class="text-secondary mb-4">
-              Where clean formulas meet elegant simplicity to enhance your
-              natural radiance. Every product is designed to feel soft,
-              effortless, and beautifully you.
+      <!-- Justification Boxes -->
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6 d-flex">
+          <div class="justification-card">
+            <h5>a) Impact of Design and Color Choices</h5>
+            <p>
+              The color scheme of Celeste consists of bronze #A2844B, cream
+              #FBF2EB, soft pink #FFE4E1, peach #F2CCC6, and deep brown
+              #735248. This color combination will convey serenity,
+              femininity, and opulence. These colors provide warmth to the
+              user's experience of browsing cosmetic products. Warm neutrals
+              serve as a soft background which calls attention to imagery
+              without overwhelming the user, while the deep brown shows great
+              contrast for very readable text. Application of these colors to
+              buttons, headings, and interface elements reinforces brand
+              identity through consistency, strengthens visual hierarchy, and
+              conveys a sense of user trust. The palette in general directs
+              attention to key content, raises product presentation, and
+              reinforces Celeste's brand message: elegant yet inclusive.
             </p>
           </div>
-
-          <div class="col-6 col-lg-3">
-            <h6 class="text-muted mb-3">Shop</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a class="footer-link" href="#">Makeup Collection</a>
-              </li>
-              <li class="mb-2">
-                <a class="footer-link" href="#">Skincare Essentials</a>
-              </li>
-              <li class="mb-2">
-                <a class="footer-link" href="#">Science &amp; Research</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-6 col-lg-4">
-            <h6 class="text-muted mb-3">Contact</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <i class="bi bi-envelope me-2 text-secondary"></i>
-                <a class="footer-link" href="mailto:hello@celeste.com"
-                  >hello@celeste.com</a
-                >
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-telephone me-2 text-secondary"></i>
-                <a class="footer-link">+973 33336666</a>
-              </li>
-              <li class="mb-2">
-                <i class="bi bi-geo-alt me-2 text-secondary"></i>
-                <span class="text-secondary"
-                  >Bahrain Polytechnic, Isa Town</span
-                >
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <hr class="my-4 opacity-25" />
-        <div class="small text-secondary">
-          &copy; 2025 Celeste Cosmetics. All rights reserved.
+        <div class="col-lg-6 d-flex">
+          <div class="justification-card">
+            <h5>
+              b) Impact of HTML, CSS, JS, and Bootstrap on Maintainability
+            </h5>
+            <p>
+              Semantic HTML5 provides a clear document structure that makes
+              the code more understandable and easier to update from a
+              long-term perspective for any developer. CSS variables are
+              defined under the: root, which means it unifies everything on
+              the theme and allows developers to change visual properties
+              globally right from one place. Using the rem unit scale, it will
+              create a responsive scaling without rewriting styles. Modular
+              class naming keeps code organized and predictable. Bootstrap
+              adds to maintainability by providing a robust grid and reusing
+              components; this reduces the need to write custom CSS, thereby
+              reducing the risk of inconsistent layouts. JavaScript is used as
+              little as possible and is modular, enabling interactive features
+              while maintaining performance. Combined, these technologies
+              ensure that the website is scalable, easy to modify, and
+              maintainable in the long term.
+            </p>
+          </div>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </section>
+  <!-- Footer: copy paste this in all pages -->
+  <footer class="footer-gloss footer-bg">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center gap-1">
+            <img src="images/logo-without-bg.png" alt="Logo" class="logo-footer" />
+            <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
+          </div>
+
+          <p class="text-secondary mb-4">
+            Where clean formulas meet elegant simplicity to enhance your
+            natural radiance. Every product is designed to feel soft,
+            effortless, and beautifully you.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h6 class="text-muted mb-3">Shop</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a class="footer-link" href="#">Makeup Collection</a>
+            </li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Skincare Essentials</a>
+            </li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Science &amp; Research</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h6 class="text-muted mb-3">Contact</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-envelope me-2 text-secondary"></i>
+              <a class="footer-link" href="mailto:hello@celeste.com">hello@celeste.com</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-telephone me-2 text-secondary"></i>
+              <a class="footer-link">+973 33336666</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-geo-alt me-2 text-secondary"></i>
+              <span class="text-secondary">Bahrain Polytechnic, Isa Town</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 opacity-25" />
+      <div class="small text-secondary">
+        &copy; 2025 Celeste Cosmetics. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Getting username
+    let userName = document.getElementById('user-name')
+
+    function getUser() {
+      let username = localStorage.getItem('username')
+      if (username) {
+        userName.textContent = `Welcome, ${username}!`
+      } else {
+        userName.textContent = `Welcome, user!`
+      }
+    }
+    getUser()
+  </script>
+</body>
+
 </html>
