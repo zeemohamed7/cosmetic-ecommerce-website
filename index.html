@@ -21,8 +21,6 @@
       defer
     ></script>
 
-
-
     <style>
       /*
            #A2844B — bronze
@@ -233,7 +231,7 @@
         border-color: var(--bronze) !important;
       }
 
-      /* Register form */
+      /*------ Register form -----*/
 
       .form-header {
         text-align: center;
@@ -257,12 +255,43 @@
         color: #919191;
       }
 
-      /* #register-form-section {
-        background: var(--pink);
-      } */
-
       .form-header {
         color: var(--peach);
+      }
+
+      /* ---- Validation messages ------ */
+      #validation-message {
+        color: #b33a3a;
+        font-weight: 500;
+        background-color: #ffe4e1;
+        border-left: 4px solid var(--bronze);
+        padding: 10px 14px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        display: none; /* hidden until needed */
+      }
+
+      /* Success Message */
+      #validation-message.success {
+        color: #2e7d32;
+        background-color: #e6f4ea;
+        border-left: 4px solid #2e7d32;
+      }
+      /* https://www.w3schools.com/cssref/atrule_keyframes.php */
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .show-message {
+        display: block !important;
+        animation: fadeIn 0.3s ease;
       }
     </style>
   </head>
@@ -324,22 +353,26 @@
     <section class="mission-section container">
       <h2>Our Mission</h2>
       <p class="lead">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
+        We create high-quality beauty products that are clean, luxurious, and
+        made for everyone. Our mission is simple: elevate your routine with
+        formulas that feel good, look good, and do good.
       </p>
 
       <div class="row g-4 justify-content-center">
         <div class="col-md-4">
           <div class="mission-card h-100">
             <div class="mission-icon">
-              <i class="bi bi-heart"></i>
+              <img
+                src="images/clean-hands-svgrepo-com (1).svg"
+                class="value-icon"
+              />
             </div>
+
             <h5 class="mission-title">Clean Beauty</h5>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
+              Gentle, safe, and transparent formulas designed to nourish your
+              skin without unnecessary additives.
             </p>
           </div>
         </div>
@@ -347,12 +380,15 @@
         <div class="col-md-4">
           <div class="mission-card h-100">
             <div class="mission-icon">
-              <i class="bi bi-star"></i>
+              <img
+                src="images/woman-bag-3-svgrepo-com (4).svg"
+                class="value-icon"
+              />
             </div>
             <h5 class="mission-title">Luxury Quality</h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
+              Premium ingredients and refined formulations that deliver a
+              smooth, high-end experience every time.
             </p>
           </div>
         </div>
@@ -360,12 +396,40 @@
         <div class="col-md-4">
           <div class="mission-card h-100">
             <div class="mission-icon">
-              <i class="bi bi-award"></i>
+              <svg
+                width="64px"
+                height="64px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M9.47963 6.8252C7.66038 7.50672 6.75075 7.84748 6.641 8.55405C6.53124 9.26062 7.29404 9.86506 8.81965 11.0739L9.21434 11.3867C9.64787 11.7302 9.86464 11.902 9.9889 12.1361C10.1132 12.3702 10.1309 12.6402 10.1662 13.1801L10.1984 13.6717C10.3229 15.5717 10.3852 16.5217 11.0438 16.8493C11.7024 17.1768 12.5212 16.6649 14.1588 15.6412L14.5825 15.3763C15.0479 15.0854 15.2805 14.9399 15.5467 14.8999C15.8128 14.86 16.0822 14.93 16.621 15.07L17.1116 15.1975C19.0078 15.6903 19.9559 15.9367 20.4727 15.4325C20.9895 14.9284 20.7328 14.0076 20.2193 12.166M20.6654 9.29403C21.7128 7.69854 22.2365 6.90079 21.8973 6.26168C21.5581 5.62258 20.5806 5.56537 18.6256 5.45095L18.1198 5.42135C17.5643 5.38884 17.2865 5.37259 17.0452 5.25261C16.804 5.13263 16.6265 4.9225 16.2716 4.50226L15.9486 4.11967C14.6997 2.64083 14.0753 1.90141 13.3488 2.01056C12.6224 2.11971 12.275 3.00516 11.5803 4.77604"
+                    stroke="#A2844B"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                  <path
+                    d="M6.59527 8.55078C3.48192 10.6857 1.09828 14.7691 2.33125 21.9998C3.42268 18.9857 6.71261 16.5716 10.3877 15.4097"
+                    stroke="#A2844B"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
             </div>
             <h5 class="mission-title">Inclusive Beauty</h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
+              Products crafted to flatter all skin tones and celebrate every
+              person’s unique beauty.
             </p>
           </div>
         </div>
@@ -470,12 +534,13 @@
               </div>
               <div class="mb-3">
                 <label class="form-label">Email</label>
-                  <input
-                          type="email"
-                          class="form-control" placeholder="Email" id="email"
-                          required
-                  >
-
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email"
+                  id="email"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label class="form-label">Mobile No.</label>
@@ -489,8 +554,12 @@
               </div>
 
               <div class="text-center">
-                  <p id="validation-message"></p>
-                <button type="submit" class="btn btn-brand submit-btn" id="register-form-button">
+                <p id="validation-message"></p>
+                <button
+                  type="submit"
+                  class="btn btn-brand submit-btn"
+                  id="register-form-button"
+                >
                   Submit
                 </button>
               </div>
@@ -515,8 +584,9 @@
             </div>
 
             <p class="text-secondary mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Where clean formulas meet elegant simplicity to enhance your
+              natural radiance. Every product is designed to feel soft,
+              effortless, and beautifully you.
             </p>
           </div>
 
@@ -564,72 +634,85 @@
         </div>
       </div>
     </footer>
+    <!-- Script for username: copy paste in all pages -->
     <script>
+      let userName = document.getElementById('user-name')
 
-        let registerButton = document.getElementById("register-form-button");
-        let validationMessage = document.getElementById("validation-message");
-        let userName = document.getElementById("user-name");
+      function getUser() {
+        let username = localStorage.getItem('username')
+        if (username) {
+          userName.textContent = `Welcome, ${username}!`
+        } else {
+          userName.textContent = `Welcome, user!`
+        }
+      }
+      getUser()
+      let registerButton = document.getElementById('register-form-button')
+      let validationMessage = document.getElementById('validation-message')
 
-        let errors = []
+      let errors = []
 
-        // https://www.geeksforgeeks.org/javascript/javascript-program-to-validate-an-email-address/
-        function valid(email) {
-            const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return pattern.test(email);
+      // https://www.geeksforgeeks.org/javascript/javascript-program-to-validate-an-email-address/
+      function valid(email) {
+        // regex requiring @ and at least 2 letters after the dot
+        const pattern = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
+        return pattern.test(email)
+      }
+
+      registerButton.addEventListener('click', () => {
+        // clear validation message
+        validationMessage.classList.remove('success')
+        validationMessage.classList.remove('show-message')
+        validationMessage.innerHTML = ''
+
+        errors = []
+        let firstName = document.getElementById('first-name')
+        let lastName = document.getElementById('last-name')
+        let email = document.getElementById('email')
+        let mobile = document.getElementById('mobile')
+
+        event.preventDefault()
+
+        if (!firstName.value) {
+          errors.push('First name is required')
+        } else if (firstName.value.length < 3) {
+          errors.push('First name should be at least 3 characters')
         }
 
-        registerButton.addEventListener("click", () => {
-            validationMessage.textContent = ""
-            errors = []
-            let firstName = document.getElementById("first-name");
-            let lastName = document.getElementById("last-name");
-            let email = document.getElementById("email");
-            let mobile = document.getElementById("mobile");
+        if (!lastName.value) {
+          errors.push('Last name is required')
+        } else if (lastName.value.length < 3) {
+          errors.push('Last name should be at least 3 characters')
+        }
 
+        if (!email.value) {
+          errors.push('Email is required')
+        } else {
+          !valid(email.value) ? errors.push('Email is not valid') : null
+        }
 
-            event.preventDefault();
+        if (!mobile.value) {
+          errors.push('Mobile number is required')
+        } else if (mobile.value.length !== 8 || isNaN(mobile.value)) {
+          errors.push('Mobile Number should have exactly 8 digits.')
+        }
 
-            if (!firstName.value) {
-                errors.push("First name is required");
-            } else if (firstName.value.length < 3) {
-                errors.push("First name should be at least 3 characters");
-            }
-
-            if (!lastName.value) {
-                errors.push("Last name is required");
-            } else if (lastName.value.length < 3) {
-                errors.push("Last name should be at least 3 characters");
-            }
-
-            if (!email.value) {
-                errors.push("Email is required");
-            } else {
-                console.log(valid(email));
-                !valid(email.value) ? errors.push("Email is not valid") : null;
-            }
-
-            if (!mobile.value) {
-                errors.push("Mobile number is required");
-            } else if (mobile.value.length !== 8 || isNaN(mobile.value)) {
-                errors.push("Mobile Number should have exactly 8 digits.");
-            }
-
-            if (errors.length > 0) {
-                validationMessage.innerHTML = "An error occured: ";
-                validationMessage.innerHTML += `<br>${errors.join("<br> ")}`;
-            } else {
-                userName.textContent = `Welcome, ${firstName.value}!`;
-                validationMessage.textContent = "Form submitted successfully";
-
-                // Reset form values
-                firstName.value = "";
-                lastName.value = "";
-                email.value = "";
-                mobile.value = "";
-            }
-
-        })
-
+        if (errors.length > 0) {
+          validationMessage.classList.add('show-message')
+          validationMessage.innerHTML =
+            `<strong>Please fix the following:</strong><br>` +
+            errors.join('<br>')
+        } else {
+          validationMessage.classList.add('success', 'show-message')
+          validationMessage.textContent = 'Form submitted successfully!'
+          localStorage.setItem('username', firstName.value)
+          // Reset form values
+          firstName.value = ''
+          lastName.value = ''
+          email.value = ''
+          mobile.value = ''
+        }
+      })
     </script>
   </body>
 </html>
