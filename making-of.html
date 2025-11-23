@@ -207,14 +207,12 @@
       padding: 30px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       height: 100%;
       transition: box-shadow 0.2s ease;
     }
 
-    .justification-card:hover {
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
+
 
     .justification-card h5 {
       color: var(--bronze);
@@ -359,21 +357,43 @@
               b) Impact of HTML, CSS, JS, and Bootstrap on Maintainability
             </h5>
             <p>
-              Semantic HTML5 provides a clear document structure that makes
-              the code more understandable and easier to update from a
-              long-term perspective for any developer. CSS variables are
-              defined under the: root, which means it unifies everything on
-              the theme and allows developers to change visual properties
-              globally right from one place. Using the rem unit scale, it will
-              create a responsive scaling without rewriting styles. Modular
-              class naming keeps code organized and predictable. Bootstrap
-              adds to maintainability by providing a robust grid and reusing
-              components; this reduces the need to write custom CSS, thereby
-              reducing the risk of inconsistent layouts. JavaScript is used as
-              little as possible and is modular, enabling interactive features
-              while maintaining performance. Combined, these technologies
-              ensure that the website is scalable, easy to modify, and
-              maintainable in the long term.
+            <ul>
+              <li>Semantic HTML5 provides a logical page structure, making the code easier for any developer to
+                understand,
+                edit, and expand in the future.</li>
+
+              <li>CSS variables in :root centralize all theme colors, ensuring consistency and allowing visual changes
+                to be
+                applied globally from one place.</li>
+
+              <li>Using rem units supports responsive scaling, improves accessibility, and prevents the need to rewrite
+                sizes for different screen widths.</li>
+
+              <li>Modular and meaningful class naming keeps the stylesheet predictable and easy to navigate, supporting
+                long-term scalability.</li>
+
+              <li>Bootstrap’s responsive grid system reduces the amount of custom CSS required and ensures layout
+                consistency across pages.</li>
+
+              <li>Reusable Bootstrap components (navbars, buttons, cards) minimize duplicated code and make future
+                redesigns
+                more efficient.</li>
+
+              <li>Minimal and modular JavaScript simplifies debugging, reduces complexity, and keeps the interactive
+                parts
+                of the site stable and maintainable.</li>
+
+              <li>Separation of concerns (HTML for structure, CSS for styling, JS for behavior) ensures cleaner code
+                that is
+                easier for future developers to modify.</li>
+
+              <li>Consistent folder organization (css/, js/, images/) makes the project easier to navigate and maintain
+                over
+                time.</li>
+
+              <li>Comments in HTML, CSS, and JS provide guidance and clarify the purpose of each block of code, aiding
+                future developers.</li>
+            </ul>
             </p>
           </div>
         </div>
