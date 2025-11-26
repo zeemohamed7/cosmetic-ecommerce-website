@@ -1,640 +1,756 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Celeste - Product Detail</title>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
 
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celeste - Product Detail</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <style>
+    :root {
+      --bronze: #a2844b;
+      --cream: #fbf2eb;
+      --pink: #ffe4e1;
+      --peach: #f2ccc6;
+      --brown: #735248;
+    }
 
-    <style>
-      :root {
-        --bronze: #a2844b;
-        --cream: #fbf2eb;
-        --pink: #ffe4e1;
-        --peach: #f2ccc6;
-        --brown: #735248;
-      }
+    body {
+      font-family: 'Roboto', sans-serif !important;
+    }
 
-      body {
-        background-color: var(--cream);
-        font-family: 'Poppins', sans-serif;
-        color: #2e2e2e;
-      }
+    /* ---------- Navbar ---------- */
 
-      .container {
-        margin-top: 6rem;
-      }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100000;
+      /* over the hero image */
+      background: var(--cream);
+    }
 
-      /* ---------- Gallery ---------- */
+    .logo {
+      width: 4rem;
+    }
+
+    .navbar .nav-link {
+      margin-top: -0.5rem;
+      color: var(--brown);
+      background-image: linear-gradient(var(--bronze), var(--bronze));
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
+      /* underlining the navbar */
+      background-size: 0 2px;
+      transition: background-size 0.2s ease;
+      padding-bottom: 0.25rem;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus,
+    .navbar .nav-link.active {
+      background-size: 100% 2px;
+      color: var(--brown);
+      font-weight: 500;
+    }
+
+    .btn-brand {
+      background: var(--bronze);
+      color: var(--cream);
+      border-color: var(--bronze);
+    }
+
+    .btn-brand:hover {
+      background-color: var(--brown);
+    }
+
+    /* ---------- Footer ---------- */
+
+    .logo-footer {
+      width: 7rem;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-left: -16px;
+    }
+
+    footer h4 {
+      color: var(--bronze);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-left: -16px;
+    }
+
+    .d-flex.align-items-center {
+      gap: 0rem;
+    }
+
+    .footer-gloss {
+      background: linear-gradient(180deg,
+          rgba(255, 255, 255, 0.8),
+          rgba(245, 245, 245, 0.8));
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .footer-link {
+      color: #434343;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: #353434;
+      text-decoration: underline;
+    }
+
+    .footer-bg {
+      background-color: #ffe4e1;
+    }
+
+    body {
+      background-color: var(--cream);
+      margin-top: 4rem;
+
+      color: #2e2e2e;
+    }
+
+    /* .container {
+        margin-top: 2rem;
+      } */
+
+    /* ---------- Gallery ---------- */
+    .product-gallery {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      border: 1px solid #e5d4d9;
+      cursor: pointer;
+      object-fit: cover;
+      transition: all 0.3s;
+    }
+
+    .thumbnail:hover,
+    .thumbnail.active {
+      border-color: var(--bronze);
+      transform: scale(1.05);
+    }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      width: 100%;
+    }
+
+    .carousel-inner {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .carousel-inner img {
+      border: 1px solid #e5d4d9;
+      object-fit: cover;
+      height: 550px;
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* Arrows (scroll buttons between images) */
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 1px solid #e8dccc;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background-color: var(--pink);
+      border-color: var(--bronze);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(0.5) sepia(1) saturate(5) hue-rotate(15deg);
+    }
+
+    /* Product Info */
+    .price {
+      color: var(--bronze);
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .btn-cart {
+      background-color: var(--bronze);
+      color: white;
+      border: none;
+      font-weight: 500;
+      padding: 0.8rem;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+
+    .btn-cart:hover {
+      background-color: var(--brown);
+    }
+
+    .icons img {
+      border-radius: 50%;
+      padding: 6px;
+      background-color: #fff;
+      border: 1px solid #e6d3d8;
+    }
+
+    .rating {
+      color: var(--bronze);
+    }
+
+    small.text-muted {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+
+      /*  Gallery  */
       .product-gallery {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
       }
 
       .thumbnails {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
       }
 
       .thumbnail {
-        width: 80px;
-        height: 80px;
-        border-radius: 10px;
-        border: 1px solid #e5d4d9;
-        cursor: pointer;
-        object-fit: cover;
-        transition: all 0.3s;
-      }
-
-      .thumbnail:hover,
-      .thumbnail.active {
-        border-color: var(--bronze);
-        transform: scale(1.05);
-      }
-
-      /* Carousel */
-      .carousel {
-        position: relative;
-        width: 100%;
-      }
-
-      .carousel-inner {
-        border-radius: 12px;
-        overflow: hidden;
+        width: 60px;
+        height: 60px;
       }
 
       .carousel-inner img {
-        border: 1px solid #e5d4d9;
-        object-fit: cover;
-        height: 550px;
-        width: 100%;
-        border-radius: 12px;
+        height: 350px;
       }
+    }
 
-      /* Arrows (scroll buttons between images) */
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 50px;
-        height: 50px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 1px solid #e8dccc;
-        border-radius: 50%;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
+    .accordion-button {
+      background-color: var(--cream);
+      color: #1f1f1f;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      text-transform: uppercase;
+    }
 
-      .carousel-control-prev:hover,
-      .carousel-control-next:hover {
-        background-color: var(--pink);
-        border-color: var(--bronze);
-        transform: translateY(-50%) scale(1.08);
-      }
+    .accordion-button:focus {
+      box-shadow: none;
+      outline: none;
+    }
 
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        filter: invert(0.5) sepia(1) saturate(5) hue-rotate(15deg);
-      }
+    .accordion-button:not(.collapsed) {
+      color: var(--bronze);
+      background-color: #fff8f3;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
-      /* Product Info */
-      .price {
-        color: var(--bronze);
-        font-size: 1.6rem;
-        font-weight: 700;
-      }
+    .accordion-body {
+      background-color: #fffdfc;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
-      .btn-cart {
-        background-color: var(--bronze);
-        color: white;
-        border: none;
-        font-weight: 500;
-        padding: 0.8rem;
-        border-radius: 5px;
-        transition: 0.3s ease;
-      }
+    .accordion-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-      .btn-cart:hover {
-        background-color: var(--brown);
-      }
+    .container.mt-5.mb-5 {
+      margin-top: 3rem !important;
+      margin-bottom: 4rem !important;
+    }
 
-      .icons img {
-        border-radius: 50%;
-        padding: 6px;
-        background-color: #fff;
-        border: 1px solid #e6d3d8;
-      }
+    .placeholder-bg {
+      background-color: #f9f4f3;
+      height: 280px;
+      border-radius: 15px 15px 0 0;
+    }
 
-      .rating {
-        color: var(--bronze);
-      }
+    /* Recommendation cards */
+    .recommend-card {
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
 
-      small.text-muted {
-        display: block;
-        margin-top: 1rem;
-      }
+    .recommend-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
 
-      @media (max-width: 768px) {
-        .product-gallery {
-          flex-direction: column;
-          align-items: center;
-        }
+    .recommend-card h6 {
+      color: #333;
+    }
 
-        .thumbnails {
-          flex-direction: row;
-          justify-content: center;
-        }
+    .recommend-card p {
+      font-size: 0.95rem;
+      color: #d8a7b1;
+    }
 
-        .thumbnail {
-          width: 60px;
-          height: 60px;
-        }
-
-        .carousel-inner img {
-          height: 350px;
-        }
-      }
-
-      .accordion-button {
-        background-color: var(--cream);
-        color: #1f1f1f;
-        font-weight: 600;
-        letter-spacing: 1px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        text-transform: uppercase;
-      }
-
-      .accordion-button:focus {
-        box-shadow: none;
-        outline: none;
-      }
-
-      .accordion-button:not(.collapsed) {
-        color: var(--bronze);
-        background-color: #fff8f3;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-
-      .accordion-body {
-        background-color: #fffdfc;
-        color: #444;
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      .accordion-item {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      .container.mt-5.mb-5 {
-        margin-top: 3rem !important;
-        margin-bottom: 4rem !important;
-      }
-
+    /* Responsive adjustment */
+    @media (max-width: 768px) {
       .placeholder-bg {
-        background-color: #f9f4f3;
-        height: 280px;
-        border-radius: 15px 15px 0 0;
+        height: 220px;
       }
+    }
 
-      /* Recommendation cards */
-      .recommend-card {
-        border-radius: 15px;
-        transition: all 0.3s ease;
-        background-color: #fff;
-      }
+    .product-link {
+      font-weight: 600;
+      color: #333;
+      text-decoration: underline;
+      text-decoration-color: var(--bronze);
+      text-underline-offset: 3px;
+      transition: 0.3s ease;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
 
-      .recommend-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      }
+    .product-link:hover {
+      color: var(--bronze);
+      text-decoration-thickness: 2px;
+    }
 
-      .recommend-card h6 {
-        color: #333;
-      }
+    .star {
+      font-size: 1.3rem;
+    }
 
-      .recommend-card p {
-        font-size: 0.95rem;
-        color: #d8a7b1;
-      }
+    .star.gold {
+      color: #ffd700;
+    }
 
-      /* Responsive adjustment */
-      @media (max-width: 768px) {
-        .placeholder-bg {
-          height: 220px;
-        }
-      }
+    .star.gray {
+      color: #ccc;
+    }
 
-      .product-link {
-        font-weight: 600;
-        color: #333;
-        text-decoration: underline;
-        text-decoration-color: var(--bronze);
-        text-underline-offset: 3px;
-        transition: 0.3s ease;
-        display: inline-block;
-        margin-bottom: 1rem;
-      }
+    .half-star {
+      position: relative;
+      display: inline-block;
+      font-size: 1.3rem;
+      color: #ccc;
+    }
 
-      .product-link:hover {
-        color: var(--bronze);
-        text-decoration-thickness: 2px;
-      }
-      .star {
-        font-size: 1.3rem;
-      }
+    .half-star::before {
+      content: '★';
+      position: absolute;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+      color: #ffd700;
+    }
+  </style>
+</head>
 
-      .star.gold {
-        color: #ffd700;
-      }
+<body>
+  <!-- Navbar: copy paste this in all pages-->
+  <nav class="navbar navbar-expand-lg navbar">
+    <div class="container">
+      <a class="navbar-brand px-4" href="index.html"><img src="images/logo-without-name.png" alt="Logo"
+          class="logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="science.html">Science</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="making-of.html">Making Of</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="our-story.html">Our Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
 
-      .star.gray {
-        color: #ccc;
-      }
+        <span class="navbar-text" id="user-name">Welcome, user</span>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-5">
+    <div class="row g-5 align-items-start">
+      <div class="col-md-6">
+        <div class="product-gallery">
+          <div class="thumbnails">
+            <img src="images/celeste-lashserum.png" class="thumbnail active" data-bs-target="#productCarousel"
+              data-bs-slide-to="0" />
+            <img src="images/Screenshot 2025-10-18 at 16.31.15.png" class="thumbnail" data-bs-target="#productCarousel"
+              data-bs-slide-to="1" />
+            <img src="images/Screenshot 2025-10-18 at 16.37.34.png" class="thumbnail" data-bs-target="#productCarousel"
+              data-bs-slide-to="2" />
+          </div>
 
-      .half-star {
-        position: relative;
-        display: inline-block;
-        font-size: 1.3rem;
-        color: #ccc;
-      }
-
-      .half-star::before {
-        content: '★';
-        position: absolute;
-        left: 0;
-        width: 50%;
-        overflow: hidden;
-        color: #ffd700;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="container py-5">
-      <div class="row g-5 align-items-start">
-        <div class="col-md-6">
-          <div class="product-gallery">
-            <div class="thumbnails">
-              <img
-                src="images/celeste-lashserum.png"
-                class="thumbnail active"
-                data-bs-target="#productCarousel"
-                data-bs-slide-to="0"
-              />
-              <img
-                src="images/Screenshot 2025-10-18 at 16.31.15.png"
-                class="thumbnail"
-                data-bs-target="#productCarousel"
-                data-bs-slide-to="1"
-              />
-              <img
-                src="images/Screenshot 2025-10-18 at 16.37.34.png"
-                class="thumbnail"
-                data-bs-target="#productCarousel"
-                data-bs-slide-to="2"
-              />
-            </div>
-
-            <!-- Carousel -->
-            <div
-              id="productCarousel"
-              class="carousel slide shadow-sm flex-grow-1"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    src="images/celeste-lashserum.png"
-                    class="d-block w-100"
-                    alt="Product 1"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/Screenshot 2025-10-18 at 16.31.15.png"
-                    class="d-block w-100"
-                    alt="Product 2"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="images/Screenshot 2025-10-18 at 16.37.34.png"
-                    class="d-block w-100"
-                    alt="Product 3"
-                  />
-                </div>
+          <!-- Carousel -->
+          <div id="productCarousel" class="carousel slide shadow-sm flex-grow-1" data-bs-ride="carousel"
+            data-bs-interval="3000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="images/celeste-lashserum.png" class="d-block w-100" alt="Product 1" />
               </div>
-
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#productCarousel"
-                data-bs-slide="prev"
-              >
-                <span class="carousel-control-prev-icon"></span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#productCarousel"
-                data-bs-slide="next"
-              >
-                <span class="carousel-control-next-icon"></span>
-              </button>
+              <div class="carousel-item">
+                <img src="images/Screenshot 2025-10-18 at 16.31.15.png" class="d-block w-100" alt="Product 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="images/Screenshot 2025-10-18 at 16.37.34.png" class="d-block w-100" alt="Product 3" />
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Product Info -->
-        <div class="col-md-6 product-info">
-          <span class="badge bg-light text-dark me-2">Skincare</span>
-          <span class="badge" style="background-color: #d8a7b1; color: white"
-            >Bestseller</span
-          >
-
-          <h2 class="fw-semibold mt-3">Lash & Brow Serum</h2>
-
-          <div class="rating mb-2">
-            <span class="star gold">★</span>
-            <span class="star gold">★</span>
-            <span class="star gold">★</span>
-            <span class="star gold">★</span>
-            <span class="half-star">★</span>
-            <a href="#" class="text-decoration-none">(2222 reviews)</a>
-          </div>
-
-          <div class="price mb-3">10 BHD</div>
-
-          <p class="text-secondary">
-            A lightweight, water-based lash and brow serum enriched with natural
-            peptides and vitamins that help enhance growth and strength for
-            fuller, thicker brows and lashes. Results in just 4 weeks!
-          </p>
-
-          <a href="#product-details" class="product-link">Product Details</a>
-
-          <div id="product-details"></div>
-
-          <div class="icons d-flex gap-3 mb-3">
-            <img
-              src="images/Screenshot 2025-10-15 at 14.50.59.png"
-              width="75"
-              alt="eco friendly"
-            />
-            <img
-              src="images/Screenshot 2025-10-15 at 14.51.15.png"
-              width="75"
-              alt="vegan"
-            />
-          </div>
-
-          <div class="d-flex align-items-center mb-3">
-            <button class="btn btn-outline-secondary btn-sm" id="minus">
-              -
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
             </button>
-            <input
-              type="text"
-              value="1"
-              id="quantity"
-              class="form-control mx-2 text-center"
-              style="width: 60px"
-            />
-            <button class="btn btn-outline-secondary btn-sm" id="plus">
-              +
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
             </button>
-            <span class="ms-2 text-secondary">In Stock</span>
           </div>
-
-          <button class="btn btn-cart w-100 mb-3">Add to Cart</button>
-
-          <small class="text-muted">
-            Free shipping over 20 BHD | 30-day return policy
-          </small>
         </div>
       </div>
+
+      <!-- Product Info -->
+      <div class="col-md-6 product-info">
+        <span class="badge bg-light text-dark me-2">Skincare</span>
+        <span class="badge" style="background-color: #d8a7b1; color: white">Bestseller</span>
+
+        <h2 class="fw-semibold mt-3">Lash & Brow Serum</h2>
+
+        <div class="rating mb-2">
+          <span class="star gold">★</span>
+          <span class="star gold">★</span>
+          <span class="star gold">★</span>
+          <span class="star gold">★</span>
+          <span class="half-star">★</span>
+          <a href="#" class="text-decoration-none">(2222 reviews)</a>
+        </div>
+
+        <div class="price mb-3">10 BHD</div>
+
+        <p class="text-secondary">
+          A lightweight, water-based lash and brow serum enriched with natural
+          peptides and vitamins that help enhance growth and strength for
+          fuller, thicker brows and lashes. Results in just 4 weeks!
+        </p>
+
+        <a href="#product-details" class="product-link">Product Details</a>
+
+        <div id="product-details"></div>
+
+        <div class="icons d-flex gap-3 mb-3">
+          <img src="images/Screenshot 2025-10-15 at 14.50.59.png" width="75" alt="eco friendly" />
+          <img src="images/Screenshot 2025-10-15 at 14.51.15.png" width="75" alt="vegan" />
+        </div>
+
+        <div class="d-flex align-items-center mb-3">
+          <button class="btn btn-outline-secondary btn-sm" id="minus">
+            -
+          </button>
+          <input type="text" value="1" id="quantity" class="form-control mx-2 text-center" style="width: 60px" />
+          <button class="btn btn-outline-secondary btn-sm" id="plus">
+            +
+          </button>
+          <span class="ms-2 text-secondary">In Stock</span>
+        </div>
+
+        <button class="btn btn-cart w-100 mb-3">Add to Cart</button>
+
+        <small class="text-muted">
+          Free shipping over 20 BHD | 30-day return policy
+        </small>
+      </div>
     </div>
+  </div>
 
-    <!-- Product Info Accordion -->
-    <div class="container mt-3 mb-4">
-      <div class="accordion accordion-flush" id="productAccordion">
-        <!-- Description -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingDesc">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseDesc"
-              aria-expanded="false"
-              aria-controls="collapseDesc"
-            >
-              DESCRIPTION
-            </button>
-          </h2>
-          <div
-            id="collapseDesc"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingDesc"
-            data-bs-parent="#productAccordion"
-          >
-            <div class="accordion-body">
-              This luxurious, lightweight serum nourishes lashes and brows with
-              a blend of peptides and botanical extracts. Designed to strengthen
-              and condition from root to tip, it promotes visibly fuller,
-              softer, and healthier results.
-              <br />
-              <p>
-                <strong>Usage:</strong><br />
-                Apply <strong>once or twice daily</strong> to lashes and brows.
-                Use consistently in
-                <strong>regular courses throughout the year</strong> for best
-                results.
-              </p>
-            </div>
+  <!-- Product Info Accordion -->
+  <div class="container mt-3 mb-4">
+    <div class="accordion accordion-flush" id="productAccordion">
+      <!-- Description -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingDesc">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseDesc" aria-expanded="false" aria-controls="collapseDesc">
+            DESCRIPTION
+          </button>
+        </h2>
+        <div id="collapseDesc" class="accordion-collapse collapse" aria-labelledby="headingDesc"
+          data-bs-parent="#productAccordion">
+          <div class="accordion-body">
+            This luxurious, lightweight serum nourishes lashes and brows with
+            a blend of peptides and botanical extracts. Designed to strengthen
+            and condition from root to tip, it promotes visibly fuller,
+            softer, and healthier results.
+            <br />
+            <p>
+              <strong>Usage:</strong><br />
+              Apply <strong>once or twice daily</strong> to lashes and brows.
+              Use consistently in
+              <strong>regular courses throughout the year</strong> for best
+              results.
+            </p>
           </div>
         </div>
+      </div>
 
-        <!-- Clinical Results -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingResults">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseResults"
-              aria-expanded="false"
-              aria-controls="collapseResults"
-            >
-              CLINICAL RESULTS
-            </button>
-          </h2>
-          <div
-            id="collapseResults"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingResults"
-            data-bs-parent="#productAccordion"
-          >
-            <div class="accordion-body">
-              <strong>In a 4-week independent study: </strong>
-              <ul>
-                <li>92% noticed stronger, fuller lashes</li>
-                <li>89% saw reduced breakage and fallout</li>
-                <li>95% felt overall lash and brow hydration improved</li>
-              </ul>
-            </div>
+      <!-- Clinical Results -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingResults">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseResults" aria-expanded="false" aria-controls="collapseResults">
+            CLINICAL RESULTS
+          </button>
+        </h2>
+        <div id="collapseResults" class="accordion-collapse collapse" aria-labelledby="headingResults"
+          data-bs-parent="#productAccordion">
+          <div class="accordion-body">
+            <strong>In a 4-week independent study: </strong>
+            <ul>
+              <li>92% noticed stronger, fuller lashes</li>
+              <li>89% saw reduced breakage and fallout</li>
+              <li>95% felt overall lash and brow hydration improved</li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        <!-- Key Ingredients -->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingIngredients">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseIngredients"
-              aria-expanded="false"
-              aria-controls="collapseIngredients"
-            >
-              KEY INGREDIENTS
-            </button>
-          </h2>
-          <div
-            id="collapseIngredients"
-            class="accordion-collapse collapse"
-            aria-labelledby="headingIngredients"
-            data-bs-parent="#productAccordion"
-          >
-            <div class="accordion-body">
-              <ul>
-                <li>
-                  <strong>Biotinoyl Tripeptide-1:</strong> Strengthens lashes by
-                  boosting collagen and keratin; helps reduce hair loss and
-                  promotes up to <strong>121% fuller growth</strong>.
-                </li>
-                <li>
-                  <strong>Myristoyl Hexapeptide-16 & Pentapeptide-17:</strong>
-                  Stimulate keratin genes and
-                  <strong>visibly lengthen lashes</strong> within weeks.
-                </li>
-                <li>
-                  <strong>Biotin (Vitamin B7):</strong> Encourages new cell
-                  growth for <strong>thicker, longer lashes</strong>.
-                </li>
-                <li>
-                  <strong>Rosemary Leaf Extract:</strong> Improves blood flow to
-                  follicles for <strong>enhanced lash and brow growth</strong>.
-                </li>
-                <li>
-                  <strong>Niacinamide & Panthenol (Vitamins B3 & B5):</strong>
-                  Boost circulation, <strong>hydrate</strong>, and nourish hair
-                  and skin.
-                </li>
-              </ul>
+      <!-- Key Ingredients -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingIngredients">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseIngredients" aria-expanded="false" aria-controls="collapseIngredients">
+            KEY INGREDIENTS
+          </button>
+        </h2>
+        <div id="collapseIngredients" class="accordion-collapse collapse" aria-labelledby="headingIngredients"
+          data-bs-parent="#productAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>Biotinoyl Tripeptide-1:</strong> Strengthens lashes by
+                boosting collagen and keratin; helps reduce hair loss and
+                promotes up to <strong>121% fuller growth</strong>.
+              </li>
+              <li>
+                <strong>Myristoyl Hexapeptide-16 & Pentapeptide-17:</strong>
+                Stimulate keratin genes and
+                <strong>visibly lengthen lashes</strong> within weeks.
+              </li>
+              <li>
+                <strong>Biotin (Vitamin B7):</strong> Encourages new cell
+                growth for <strong>thicker, longer lashes</strong>.
+              </li>
+              <li>
+                <strong>Rosemary Leaf Extract:</strong> Improves blood flow to
+                follicles for <strong>enhanced lash and brow growth</strong>.
+              </li>
+              <li>
+                <strong>Niacinamide & Panthenol (Vitamins B3 & B5):</strong>
+                Boost circulation, <strong>hydrate</strong>, and nourish hair
+                and skin.
+              </li>
+            </ul>
 
-              <p>
-                <strong>Full Ingredient List:</strong><br />
-                Aqua, Propylene Glycol, Panthenol, Glycerin, Rosmarinus
-                Officinalis Leaf Extract, Chamomilla Recutita Flower Extract,
-                Equisetum Arvense Extract, Salvia Officinalis Leaf Extract,
-                Urtica Dioica Extract, Melissa Officinalis Leaf Extract, Humulus
-                Lupulus Extract, Hydroxyethylcellulose, Niacinamide, Tocopheryl
-                Acetate, Biotinoyl Tripeptide-1, Myristoyl Hexapeptide-16,
-                Myristoyl Pentapeptide-17, Biotin, Citric Acid, Phenoxyethanol,
-                Ethylhexylglycerin.
-              </p>
-            </div>
+            <p>
+              <strong>Full Ingredient List:</strong><br />
+              Aqua, Propylene Glycol, Panthenol, Glycerin, Rosmarinus
+              Officinalis Leaf Extract, Chamomilla Recutita Flower Extract,
+              Equisetum Arvense Extract, Salvia Officinalis Leaf Extract,
+              Urtica Dioica Extract, Melissa Officinalis Leaf Extract, Humulus
+              Lupulus Extract, Hydroxyethylcellulose, Niacinamide, Tocopheryl
+              Acetate, Biotinoyl Tripeptide-1, Myristoyl Hexapeptide-16,
+              Myristoyl Pentapeptide-17, Biotin, Citric Acid, Phenoxyethanol,
+              Ethylhexylglycerin.
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <div class="container mt-5 mb-5">
-      <h4 class="fw-semibold mb-4" style="color: #d8a7b1">You May Also Like</h4>
+  </div>
+  <div class="container mt-5 mb-5">
+    <h4 class="fw-semibold mb-4" style="color: #d8a7b1">You May Also Like</h4>
 
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100 recommend-card">
+          <div class="card-img-top placeholder-bg"></div>
+          <div class="card-body text-start">
+            <h6 class="fw-normal mb-1">Gentle Cleansing Foam</h6>
+            <p class="text-muted mb-0 fw-semibold" style="color: #d8a7b1 !important">
+              6 BHD
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100 recommend-card">
+          <div class="card-img-top placeholder-bg"></div>
+          <div class="card-body text-start">
+            <h6 class="fw-normal mb-1">Hydrating Night Cream</h6>
+            <p class="text-muted mb-0 fw-semibold" style="color: #d8a7b1 !important">
+              8 BHD
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm h-100 recommend-card">
+          <div class="card-img-top placeholder-bg"></div>
+          <div class="card-body text-start">
+            <h6 class="fw-normal mb-1">Daily Moisturizer</h6>
+            <p class="text-muted mb-0 fw-semibold" style="color: #d8a7b1 !important">
+              15 BHD
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- Footer: copy paste this in all pages -->
+  <footer class="footer-gloss footer-bg">
+    <div class="container py-5">
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100 recommend-card">
-            <div class="card-img-top placeholder-bg"></div>
-            <div class="card-body text-start">
-              <h6 class="fw-normal mb-1">Gentle Cleansing Foam</h6>
-              <p
-                class="text-muted mb-0 fw-semibold"
-                style="color: #d8a7b1 !important"
-              >
-                6 BHD
-              </p>
-            </div>
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center gap-1">
+            <img src="images/logo-without-bg.png" alt="Logo" class="logo-footer" />
+            <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
           </div>
+
+          <p class="text-secondary mb-4">
+            Where clean formulas meet elegant simplicity to enhance your
+            natural radiance. Every product is designed to feel soft,
+            effortless, and beautifully you.
+          </p>
         </div>
 
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100 recommend-card">
-            <div class="card-img-top placeholder-bg"></div>
-            <div class="card-body text-start">
-              <h6 class="fw-normal mb-1">Hydrating Night Cream</h6>
-              <p
-                class="text-muted mb-0 fw-semibold"
-                style="color: #d8a7b1 !important"
-              >
-                8 BHD
-              </p>
-            </div>
-          </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="text-muted mb-3">Shop</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a class="footer-link" href="#">Makeup Collection</a>
+            </li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Skincare Essentials</a>
+            </li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Science &amp; Research</a>
+            </li>
+          </ul>
         </div>
 
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100 recommend-card">
-            <div class="card-img-top placeholder-bg"></div>
-            <div class="card-body text-start">
-              <h6 class="fw-normal mb-1">Daily Moisturizer</h6>
-              <p
-                class="text-muted mb-0 fw-semibold"
-                style="color: #d8a7b1 !important"
-              >
-                15 BHD
-              </p>
-            </div>
-          </div>
+        <div class="col-6 col-lg-4">
+          <h6 class="text-muted mb-3">Contact</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-envelope me-2 text-secondary"></i>
+              <a class="footer-link" href="mailto:hello@celeste.com">hello@celeste.com</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-telephone me-2 text-secondary"></i>
+              <a class="footer-link">+973 33336666</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-geo-alt me-2 text-secondary"></i>
+              <span class="text-secondary">Bahrain Polytechnic, Isa Town</span>
+            </li>
+          </ul>
         </div>
       </div>
+
+      <hr class="my-4 opacity-25" />
+      <div class="small text-secondary">
+        &copy; 2025 Celeste Cosmetics. All rights reserved.
+      </div>
     </div>
-    <script defer>
-      const minus = document.getElementById('minus')
-      const plus = document.getElementById('plus')
-      const quantity = document.getElementById('quantity')
+  </footer>
+  <script defer>
+    // Getting username
+    let userName = document.getElementById('user-name')
 
-      minus.addEventListener('click', () => {
-        let val = parseInt(quantity.value)
-        if (val > 1) quantity.value = val - 1
-      })
+    function getUser() {
+      let username = localStorage.getItem('username')
+      if (username) {
+        userName.textContent = `Welcome, ${username}!`
+      } else {
+        userName.textContent = `Welcome, user!`
+      }
+    }
+    getUser()
+    const minus = document.getElementById('minus')
+    const plus = document.getElementById('plus')
+    const quantity = document.getElementById('quantity')
 
-      plus.addEventListener('click', () => {
-        let val = parseInt(quantity.value)
-        quantity.value = val + 1
-      })
+    minus.addEventListener('click', () => {
+      let val = parseInt(quantity.value)
+      if (val > 1) quantity.value = val - 1
+    })
 
-      // Thumbnail active effect
-      const thumbs = document.querySelectorAll('.thumbnail')
-      thumbs.forEach((thumb) => {
-        thumb.addEventListener('click', () => {
-          thumbs.forEach((t) => t.classList.remove('active'))
-          thumb.classList.add('active')
-        })
+    plus.addEventListener('click', () => {
+      let val = parseInt(quantity.value)
+      quantity.value = val + 1
+    })
+
+    // Thumbnail active effect
+    const thumbs = document.querySelectorAll('.thumbnail')
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        thumbs.forEach((t) => t.classList.remove('active'))
+        thumb.classList.add('active')
       })
-    </script>
-  </body>
+    })
+  </script>
+</body>
+
 </html>
