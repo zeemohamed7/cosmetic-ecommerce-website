@@ -147,14 +147,53 @@
       .footer-bg {
         background-color: #ffe4e1;
       }
+      /* Page specific styling */
+      body{
+      margin-top: 50px;
+      color: #735248;
+      background-color: #FBF2EB;
+      margin: 30px;
+    }
+    .title{
+      display: flex;
+    }
+    .title img{
+      max-width: 100px;
+      }
+    a{
+      text-decoration: none;
+      color: #735248;
+      }
+      .item-card{
+        display: flex;
+        border: #a2844b 2px solid;
+        border-radius: 20px;
+        margin: 10px;
+      }
+      .item-card img{
+        margin: 20px;
+        max-width: 140px;
+        border-radius: 20px;
 
-
+      }
     </style>
   <body>
+    <a href="index.html">&#x2190; Continue Shopping</a>
     <div class="title">
-      <img src="Images/basket.svg" alt="basket">
+      <img src="Images/cart.png" alt="basket">
       <h2>Your cart</h2>
+    </div>
+    <div class="cart-info">
+      <p>xyz Items in your cart</p>
+    </div>
+    <div class="total-items">
+      <div class="item-card">
+        <img src="Images/celeste-lashserum.png" alt="Lash serum">
+        <h5>Lash Serum</h5>
+      </div>
 
     </div>
+
+    
   </body>
 </html>
