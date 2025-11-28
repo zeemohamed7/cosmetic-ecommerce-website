@@ -6,6 +6,7 @@
     <title>Celeste</title>
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="./css//bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
     <!-- JS files -->
     <script src="./js/bootstrap.min.js" defer></script>
   </head>
@@ -162,38 +163,173 @@
       }
     a{
       text-decoration: none;
-      color: #735248;
+      color: var(--brown);
+      }
+      a:hover{
+        color: var(--bronze);
       }
       .item-card{
         display: flex;
-        border: #a2844b 2px solid;
+        border: var(--pink) 2px solid;
         border-radius: 20px;
         margin: 10px;
       }
-      .item-card img{
-        margin: 20px;
-        max-width: 140px;
-        border-radius: 20px;
 
-      }
     </style>
-  <body>
-    <a href="index.html">&#x2190; Continue Shopping</a>
-    <div class="title">
-      <img src="Images/cart.png" alt="basket">
-      <h2>Your cart</h2>
-    </div>
-    <div class="cart-info">
-      <p>xyz Items in your cart</p>
-    </div>
-    <div class="total-items">
-      <div class="item-card">
-        <img src="Images/celeste-lashserum.png" alt="Lash serum">
-        <h5>Lash Serum</h5>
+    <body>
+<div class="container py-4">
+
+  <!-- Back / Continue Shopping -->
+  <div class="mb-3">
+    <a href="./index.html" class="text-decoration-none d-inline-flex align-items-center">
+      <i class="bi bi-arrow-left-short fs-4 me-1"></i>
+      <span>Continue Shopping</span>
+    </a>
+  </div>
+
+  <h1 class="fw-semibold mb-1">Shopping Cart</h1>
+  <p class="text-muted mb-4">4 items in your cart</p>
+
+
+  <div class="row g-4">
+    <!-- LEFT SIDE: CART ITEMS -->
+    <div class="col-lg-8">
+
+      <!-- ITEM 1 -->
+      <div class="card p-4 item-card mb-3" data-price="10">
+        <div class="row align-items-center g-3">
+
+          <div class="col-md-2 d-flex justify-content-center">
+            <img src="./Images/celeste-lashserum.png" alt="Product Image" class="img-fluid rounded w-100">
+          </div>
+
+          <div class="col-md-6">
+            <span class="badge rounded-pill text-bg-light mb-2">Makeup</span>
+            <h4 class="mb-4">Celeste's Lash & Brow Serum</h4>
+
+            <div class="d-flex align-items-center">
+              <span class="me-3">Quantity:</span>
+
+              <div class="btn-group">
+                <button class="btn btn-outline-secondary" onclick="changeQty(this, -1)">-</button>
+                <div class="px-3 d-flex align-items-center" data-role="qty">1</div>
+                <button class="btn btn-outline-secondary" onclick="changeQty(this, 1)">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="d-flex flex-column align-items-end h-100">
+              <button class="btn btn-link text-muted p-0 mb-3">
+                <i class="bi bi-trash"></i>
+              </button>
+
+              <div class="text-end mt-auto">
+                <div class="text-muted mb-1">10BD each</div>
+                <div class="fs-4 fw-semibold" data-role="line-total">10BD</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="card p-4 item-card mb-3" data-price="6">
+        <div class="row align-items-center g-3">
+
+          <div class="col-md-2 d-flex justify-content-center">
+            <img src="./Images/celeste-lipstick.png" alt="Product Image" class="img-fluid rounded w-100">
+          </div>
+
+          <div class="col-md-6">
+            <span class="badge rounded-pill text-bg-light mb-2">Makeup</span>
+            <h4 class="mb-4">Celeste Signature Velvet Lipstick</h4>
+
+            <div class="d-flex align-items-center">
+              <span class="me-3">Quantity:</span>
+
+              <div class="btn-group">
+                <button class="btn btn-outline-secondary" onclick="changeQty(this, -1)">-</button>
+                <div class="px-3 d-flex align-items-center" data-role="qty">2</div>
+                <button class="btn btn-outline-secondary" onclick="changeQty(this, 1)">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="d-flex flex-column align-items-end h-100">
+
+              <button class="btn btn-link text-muted p-0 mb-3">
+                <i class="bi bi-trash"></i>
+              </button>
+
+              <div class="text-end mt-auto">
+                <div class="text-muted mb-1">6BD each</div>
+                <div class="fs-4 fw-semibold" data-role="line-total">12BD</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
 
-    
+
+    <!-- RIGHT SIDE: ORDER SUMMARY -->
+    <div class="col-lg-4">
+      <div class="card p-4 item-card">
+
+        <h4 class="mb-4">Order Summary</h4>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span>Subtotal</span>
+          <span id="sumSubtotal">22BD</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+          <span>Shipping</span>
+          <span class="text-success">FREE</span>
+        </div>
+
+        <div class="d-flex justify-content-between mb-3">
+          <span>Estimated Tax</span>
+          <span id="sumTax">2.2BD</span>
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between mb-4">
+          <span class="fw-semibold">Total</span>
+          <span class="fw-semibold" id="sumTotal">22.2BD</span>
+        </div>
+
+        <div class="d-grid gap-2 mb-3">
+          <button class="btn btn-primary">Proceed to Checkout</button>
+          <button class="btn btn-outline-secondary">Continue Shopping</button>
+        </div>
+
+        <p class="text-muted mb-2">We Accept</p>
+        <div class="d-flex gap-2 mb-3">
+          <span class="border rounded px-3 py-1">VISA</span>
+          <span class="border rounded px-3 py-1">MC</span>
+          <span class="border rounded px-3 py-1">AMEX</span>
+        </div>
+
+        <ul class="text-muted small mb-0">
+          <li>Secure Checkout</li>
+          <li>30-Day Money Back Guarantee</li>
+          <li>Free Returns</li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
   </body>
 </html>
