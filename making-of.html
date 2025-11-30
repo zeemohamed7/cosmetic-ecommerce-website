@@ -393,6 +393,11 @@
 
               <li>Comments in HTML, CSS, and JS provide guidance and clarify the purpose of each block of code, aiding
                 future developers.</li>
+
+              <li>Custom JavaScript validation was used instead of built-in browser validation (type="email", required,
+                minlength, etc.) to avoid automatic real-time validation while typing. This prevents inconsistent
+                behaviour across browsers and ensures all validation logic is centralized in one place, making it easier
+                to update and maintain.</li>
             </ul>
             </p>
           </div>
