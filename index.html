@@ -515,23 +515,39 @@
           <h4 class="form-header" style="color: #353434">
             Register Your Interest
           </h4>
-          <form class="mx-auto">
+          <form class="mx-auto needs-validation" id="registerForm">
             <div class="mb-3">
               <label class="form-label">First Name</label>
-              <input type="text" class="form-control" placeholder="First Name" id="first-name" />
+              <input type="text" class="form-control" placeholder="First Name" id="first-name" minlength="3" required />
+              <div class="invalid-feedback">Please enter a valid first name (min 3 letters).</div>
             </div>
 
             <div class="mb-3">
               <label class="form-label">Last Name</label>
-              <input type="text" class="form-control" placeholder="Last Name" id="last-name" />
+              <input type="text" class="form-control" placeholder="Last Name" id="last-name" minlength="3" required />
+              <div class="invalid-feedback">Please enter a valid last name (min 3 letters).</div>
             </div>
+            <!-- 
             <div class="mb-3">
               <label class="form-label">Email</label>
               <input type="email" class="form-control" placeholder="Email" id="email" required />
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div> -->
+
+            <!-- Removed above because HTML validation rules validate as you type so it's not checking validity properly using the function I provided -->
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <!-- Input type changed to text instead of email because of automatic validation (a@ would be considered a valid email) -->
+              <input type="text" class="form-control" placeholder="Email" id="email" />
+              <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
+
             <div class="mb-3">
               <label class="form-label">Mobile No.</label>
-              <input type="text" class="form-control" placeholder="Mobile No." maxlength="8" id="mobile" />
+              <input type="text" class="form-control" placeholder="Mobile No." maxlength="8" minlength="8" id="mobile"
+                required />
+              <div class="invalid-feedback">Please enter an 8-digit mobile number.</div>
+
             </div>
 
             <div class="text-center">
@@ -603,7 +619,7 @@
       </div>
     </div>
   </footer>
-  <!-- JS Script for setting username -->
+
   <script>
 
     // Getting username
@@ -622,6 +638,9 @@
     // Form submission and Setting username
     let registerButton = document.getElementById('register-form-button')
     let validationMessage = document.getElementById('validation-message')
+    const form = document.getElementById("registerForm");
+
+
 
     let errors = []
 
@@ -658,11 +677,24 @@
         errors.push('Last name should be at least 3 characters')
       }
 
-      if (!email.value) {
-        errors.push('Email is required')
+
+      if (!email.value) { // if there is no email
+        errors.push('Email is required');
+
+        email.classList.add("is-invalid");
+        email.classList.remove("is-valid");
+
+      } else if (!valid(email.value)) { // if email format is invalid
+        errors.push('Please enter a valid email.');
+
+        email.classList.add("is-invalid");
+        email.classList.remove("is-valid");
+
       } else {
-        !valid(email.value) ? errors.push('Email is not valid') : null
+        email.classList.add("is-valid");
+        email.classList.remove("is-invalid");
       }
+
 
       if (!mobile.value) {
         errors.push('Mobile number is required')
@@ -671,11 +703,13 @@
       }
 
       if (errors.length > 0) {
+
         validationMessage.classList.add('show-message')
         validationMessage.innerHTML =
           `<strong>Please fix the following:</strong><br>` +
           errors.join('<br>')
       } else {
+
         validationMessage.classList.add('success', 'show-message')
         validationMessage.textContent = 'Form submitted successfully!'
         localStorage.setItem('username', firstName.value)
@@ -684,6 +718,14 @@
         lastName.value = ''
         email.value = ''
         mobile.value = ''
+
+        form.classList.remove("was-validated");
+        email.classList.remove("is-valid", "is-invalid");
+        firstName.classList.remove("is-valid", "is-invalid");
+        lastName.classList.remove("is-valid", "is-invalid");
+        mobile.classList.remove("is-valid", "is-invalid");
+
+
       }
     })
   </script>
