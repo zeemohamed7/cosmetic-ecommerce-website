@@ -747,6 +747,8 @@
         firstName.classList.remove("is-valid", "is-invalid")
         lastName.classList.remove("is-valid", "is-invalid")
         mobile.classList.remove("is-valid", "is-invalid")
+        localStorage.setItem('username', firstName.value);
+
         getUser()
 
       }
