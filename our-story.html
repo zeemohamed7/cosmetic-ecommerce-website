@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Celeste</title>
-    <!-- CSS stylesheets -->
-    <link rel="stylesheet" href="./css//bootstrap.min.css" />
-    <!-- JS files -->
-    <script src="./js/bootstrap.min.js" defer></script>
-  </head>
-  <style>
-    /*
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celeste</title>
+  <!-- CSS stylesheets -->
+  <link rel="stylesheet" href="./css//bootstrap.min.css" />
+  <!-- JS files -->
+  <script src="./js/bootstrap.min.js" defer></script>
+</head>
+<style>
+  /*
 #A2844B — bronze
 
 #FBF2EB — cream
@@ -22,191 +23,247 @@
 #735248 — brown
  */
 
-    /* To override bootstrap colours */
-    :root {
-      --bronze: #a2844b;
-      --cream: #fbf2eb;
-      --pink: #ffe4e1;
-      --peach: #f2ccc6;
-      --brown: #735248;
-    }
+  :root {
+    --bronze: #a2844b;
+    --cream: #fbf2eb;
+    --pink: #ffe4e1;
+    --peach: #f2ccc6;
+    --brown: #735248;
+  }
 
-    /* ---------- Navbar ---------- */
-    /* .navbar-gloss {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100000;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.65),
-          rgba(255, 255, 255, 0.35)
-        );
-        backdrop-filter: blur(10px) saturate(140%);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      } */
-    .navbar {
-      color: #1f1f1f;
-    }
-    /* .navbar-gloss .nav-link:hover {
-        color: #1f1f1f;
-      } */
+  body {
+    font-family: 'Roboto', sans-serif !important;
+  }
 
-    .navbar .nav-link {
-      /* background-image: linear-gradient(#1f1f1f, #1f1f1f); */
-      background-repeat: no-repeat;
-      background-position: 0 100%;
-      background-size: 0 2px;
-      transition: background-size 0.2s ease;
-      padding-bottom: 0.25rem;
-    }
-    .navbar .nav-link:hover,
-    .navbar .nav-link:focus,
-    .navbar .nav-link.active {
-      background-size: 100% 2px;
-    }
+  /* ---------- Navbar ---------- */
 
-    .btn-brand {
-      background: var(--bronze);
-      border-color: var(--bronze);
-    }
-    .btn-brand:hover {
-      background-color: var(--brown);
-    }
-    /* ---------- Hero ---------- */
-    .hero {
-      min-height: 80vh;
-      padding-top: 5rem;
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-      color: #fff;
-      text-align: center;
-      background: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.35),
-          rgba(0, 0, 0, 0.45)
-        ),
-        url("https://t4.ftcdn.net/jpg/02/73/55/33/360_F_273553300_sBBxIPpLSn5iC5vC8FwzFh6BJDKvUeaC.jpg")
-          center/cover no-repeat;
-    }
-    .hero .panel {
-      padding: 2.5rem 2rem;
-      max-width: 760px;
-      margin-inline: auto;
-    }
-    .hero h1 {
-      font-weight: 800;
-      letter-spacing: 0.3px;
-    }
-    .hero .lead {
-      font-weight: 500;
-      opacity: 0.95;
-    }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000;
+    /* over the hero image */
+    background: var(--cream);
+  }
 
-    /* ---------- Cards ---------- */
-    .card {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    }
-    .card-title {
-      font-size: 1.25rem;
-    }
-    .text-primary {
-      color: #a2844b !important;
-    }
-    .btn-primary {
-      background-color: #a2844b !important;
-      border-color: #a2844b !important;
-    }
+  .logo {
+    width: 4rem;
+  }
 
-    /* ---------- Footer ---------- */
-    .footer-gloss {
-      background: linear-gradient(
-        180deg,
+  .navbar .nav-link {
+    margin-top: -0.5rem;
+    color: var(--brown);
+    background-image: linear-gradient(var(--bronze), var(--bronze));
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    /* underlining the navbar */
+    background-size: 0 2px;
+    transition: background-size 0.2s ease;
+    padding-bottom: 0.25rem;
+  }
+
+  .navbar .nav-link:hover,
+  .navbar .nav-link:focus,
+  .navbar .nav-link.active {
+    background-size: 100% 2px;
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  .btn-brand {
+    background: var(--bronze);
+    color: var(--cream);
+    border-color: var(--bronze);
+  }
+
+  .btn-brand:hover {
+    background-color: var(--brown);
+  }
+
+  .main {
+    padding-top: 2rem;
+  }
+
+  /* ---------- Footer ---------- */
+
+  .logo-footer {
+    width: 7rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: -16px;
+  }
+
+  footer h4 {
+    color: var(--bronze);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: -16px;
+  }
+
+  .d-flex.align-items-center {
+    gap: 0rem;
+  }
+
+  .footer-gloss {
+    background: linear-gradient(180deg,
         rgba(255, 255, 255, 0.8),
-        rgba(245, 245, 245, 0.8)
-      );
-      backdrop-filter: blur(6px);
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-    }
-    .footer-link {
-      color: #232323;
-      text-decoration: none;
-    }
-    .footer-link:hover {
-      color: #353434;
-      text-decoration: underline;
-    }
+        rgba(245, 245, 245, 0.8));
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
 
-    .footer-bg {
-      background-color: #ffe4e1;
-    }
+  .footer-link {
+    color: #434343;
+    text-decoration: none;
+  }
 
-    /* Page specific */
-    body{
-      margin-top: 50px;
-      color: #735248;
-      background-color: #FBF2EB;
-    }
-    .main {
-      text-align: center;
-      padding: 0 30px;
-      width: 70%;
-      margin: auto;
-    }
-    .vision {
-      text-align: center;
-      margin: auto;
-      border: #f2ccc6 solid 3px;
-      border-radius: 10px;
-      padding: 10px;
-      margin-top: 50px;
-      justify-content: center;
-      width: 40%;
-      background-color: white;
-    }
-    .vision h3 {
-      text-align: center;
-    }
-    .vision img{
-      padding-bottom: 10px;
-      max-width: 50px;
-    }
-    .reflect{
-      max-width: 70%;
-      margin: auto;
-      padding: 50px;
-    }
-    .team{
-      display: flex;
-      justify-content: center;
-      margin: auto;
-    }
-    .member{
-      border: #f2ccc6 solid 3px;
-      border-radius: 10px;
-      width: 300px;
-      height: 250px;
-      margin: 50px;
-      padding: 10px;
-    }
-    .teamText{
-      text-align: center;
-    }
-    .member h4{
-      text-align: center;
-    }
+  .footer-link:hover {
+    color: #353434;
+    text-decoration: underline;
+  }
 
-  </style>
-  <h1>Nav placeholder</h1>
-  <body>
-    <div class="main">
+  .footer-bg {
+    background-color: #ffe4e1;
+  }
+
+  body {
+    background-color: var(--cream);
+    margin-top: 4rem;
+
+    color: #2e2e2e;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .text-primary {
+    color: #a2844b !important;
+  }
+
+  .btn-primary {
+    background-color: #a2844b !important;
+    border-color: #a2844b !important;
+  }
+
+
+  /* Page specific */
+  body {
+    margin-top: 50px;
+    color: #735248;
+    background-color: #FBF2EB;
+  }
+
+  .story {
+    text-align: center;
+    padding: 0 30px;
+    width: 70%;
+    margin: auto;
+  }
+
+  .vision {
+    text-align: center;
+    margin: auto;
+    border: #f2ccc6 solid 3px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 50px;
+    justify-content: center;
+    width: 40%;
+    background-color: white;
+  }
+
+  .vision h3 {
+    text-align: center;
+  }
+
+  .vision img {
+    padding-bottom: 10px;
+    max-width: 50px;
+  }
+
+  .reflect {
+    max-width: 70%;
+    margin: auto;
+    padding: 50px;
+  }
+
+  .team {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .member {
+    border: #f2ccc6 solid 3px;
+    border-radius: 10px;
+    width: 300px;
+    height: 250px;
+    margin: 50px;
+    padding: 10px;
+  }
+
+  .teamText {
+    text-align: center;
+  }
+
+  .member h4 {
+    text-align: center;
+  }
+</style>
+
+<body>
+  <!-- Navbar: copy paste this in all pages-->
+  <nav class="navbar navbar-expand-lg navbar">
+    <div class="container">
+      <a class="navbar-brand px-4" href="index.html"><img src="images/logo-without-name.png" alt="Logo"
+          class="logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="science.html">Science</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="making-of.html">Making Of</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="our-story.html">Our Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html">Cart</a>
+          </li>
+        </ul>
+
+        <span class="navbar-text" id="user-name">Welcome, user</span>
+      </div>
+    </div>
+  </nav>
+  <div class="main">
+    <div class="story">
+
       <h1>Our Story</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur
@@ -227,15 +284,144 @@
     </div>
     <div class="reflect">
       <h2>Reflection</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem sunt reprehenderit veritatis obcaecati ipsum dicta similique dolorum harum blanditiis molestias ullam temporibus dolor deserunt accusamus voluptates animi ipsam quidem eum, perspiciatis odio. Reprehenderit illo, molestias consequatur alias, assumenda dignissimos tenetur iste excepturi numquam, vitae rem eum ad minima. Tenetur iste vel a deserunt perspiciatis quas modi, nulla sit ipsum, reprehenderit doloribus magnam consequuntur. Aliquam voluptatum eum ipsam enim non ea, consectetur quae cum praesentium porro repellendus quidem inventore facere ducimus, sint error dolor voluptatibus expedita at commodi odit incidunt maiores. Velit sapiente, explicabo eius consequatur eaque modi fugiat laudantium tenetur quam, veniam ex obcaecati! Cum harum deleniti, enim excepturi ipsam hic fugit similique asperiores nisi alias dolore molestiae sequi, accusamus magni, facere esse quae est. Labore unde facilis impedit repudiandae nostrum illo nobis, sed, expedita officiis doloribus nesciunt perferendis magni, ipsa quisquam debitis officia explicabo nisi incidunt harum nemo iste! Id amet, earum accusantium sed voluptatum possimus perferendis dolorem eos sapiente totam. Magnam quod eaque ea! Repellat officiis veritatis quos, recusandae mollitia ipsum qui illo consequuntur itaque aspernatur molestiae, quibusdam minus soluta explicabo, cumque impedit autem. Blanditiis ipsa quod totam necessitatibus doloribus itaque corrupti quae ullam animi dolor atque eum, eveniet impedit aperiam magnam facilis quas a nulla nesciunt expedita distinctio, incidunt eaque. Ea debitis temporibus ut, dolorem commodi rem dolores explicabo laboriosam, esse laudantium ipsa possimus beatae deserunt eaque quisquam praesentium autem obcaecati accusamus ab ratione accusantium voluptate. Sint ab fugit minima velit amet corporis, labore placeat, nemo officiis fuga laudantium odit ad repellat. Dolore alias, sequi distinctio deleniti ratione quisquam fugiat. Cumque fugit earum animi nihil excepturi atque error, quidem aut suscipit deserunt eos libero minima hic magni nulla dignissimos facere similique ducimus! Tempora eius, nesciunt illo error quos obcaecati earum eligendi debitis. Nulla nisi iure sunt officiis praesentium neque voluptatem perferendis asperiores minus maxime autem ea, eveniet, esse cum deserunt veritatis eaque ad nostrum. Omnis ullam dolor quam nihil praesentium? Vitae earum reprehenderit labore totam deserunt laborum iure eveniet? Quasi dicta quisquam consequuntur ipsa neque repellendus similique repellat aspernatur aliquam, ex aliquid dolor dolores asperiores? Minus, enim repellendus pariatur rem laudantium animi molestiae dolor quia dolores blanditiis eligendi impedit facilis deserunt quae quod repudiandae iste ut, necessitatibus est, esse magnam? Ut minima illo, quas eaque repellendus porro eligendi. Quibusdam quae, ipsum dolores recusandae ex numquam nesciunt adipisci natus voluptate delectus minima hic. Natus obcaecati aut eum. Exercitationem, alias officia qui mollitia quis cupiditate placeat quo, dolore ullam harum maiores tenetur consectetur id. Voluptate atque sequi dicta, incidunt quasi dolorum assumenda beatae aliquam odit autem earum exercitationem reprehenderit, quo tempore, odio deserunt quae quaerat ullam ea perspiciatis natus expedita nam quidem. Odit quas sunt molestias. Obcaecati facilis ullam est optio ex commodi et! Culpa ab itaque magni nulla voluptates veritatis vitae deleniti, ad, in obcaecati corporis tempore doloribus? Explicabo nemo sit cumque quam nostrum aliquam quia, ut autem provident pariatur? Maiores impedit saepe ducimus praesentium provident nesciunt amet itaque soluta neque harum doloribus suscipit reiciendis, perferendis dolores quasi.</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem sunt reprehenderit veritatis obcaecati ipsum
+        dicta similique dolorum harum blanditiis molestias ullam temporibus dolor deserunt accusamus voluptates animi
+        ipsam quidem eum, perspiciatis odio. Reprehenderit illo, molestias consequatur alias, assumenda dignissimos
+        tenetur iste excepturi numquam, vitae rem eum ad minima. Tenetur iste vel a deserunt perspiciatis quas modi,
+        nulla
+        sit ipsum, reprehenderit doloribus magnam consequuntur. Aliquam voluptatum eum ipsam enim non ea, consectetur
+        quae
+        cum praesentium porro repellendus quidem inventore facere ducimus, sint error dolor voluptatibus expedita at
+        commodi odit incidunt maiores. Velit sapiente, explicabo eius consequatur eaque modi fugiat laudantium tenetur
+        quam, veniam ex obcaecati! Cum harum deleniti, enim excepturi ipsam hic fugit similique asperiores nisi alias
+        dolore molestiae sequi, accusamus magni, facere esse quae est. Labore unde facilis impedit repudiandae nostrum
+        illo nobis, sed, expedita officiis doloribus nesciunt perferendis magni, ipsa quisquam debitis officia explicabo
+        nisi incidunt harum nemo iste! Id amet, earum accusantium sed voluptatum possimus perferendis dolorem eos
+        sapiente
+        totam. Magnam quod eaque ea! Repellat officiis veritatis quos, recusandae mollitia ipsum qui illo consequuntur
+        itaque aspernatur molestiae, quibusdam minus soluta explicabo, cumque impedit autem. Blanditiis ipsa quod totam
+        necessitatibus doloribus itaque corrupti quae ullam animi dolor atque eum, eveniet impedit aperiam magnam
+        facilis
+        quas a nulla nesciunt expedita distinctio, incidunt eaque. Ea debitis temporibus ut, dolorem commodi rem dolores
+        explicabo laboriosam, esse laudantium ipsa possimus beatae deserunt eaque quisquam praesentium autem obcaecati
+        accusamus ab ratione accusantium voluptate. Sint ab fugit minima velit amet corporis, labore placeat, nemo
+        officiis fuga laudantium odit ad repellat. Dolore alias, sequi distinctio deleniti ratione quisquam fugiat.
+        Cumque
+        fugit earum animi nihil excepturi atque error, quidem aut suscipit deserunt eos libero minima hic magni nulla
+        dignissimos facere similique ducimus! Tempora eius, nesciunt illo error quos obcaecati earum eligendi debitis.
+        Nulla nisi iure sunt officiis praesentium neque voluptatem perferendis asperiores minus maxime autem ea,
+        eveniet,
+        esse cum deserunt veritatis eaque ad nostrum. Omnis ullam dolor quam nihil praesentium? Vitae earum
+        reprehenderit
+        labore totam deserunt laborum iure eveniet? Quasi dicta quisquam consequuntur ipsa neque repellendus similique
+        repellat aspernatur aliquam, ex aliquid dolor dolores asperiores? Minus, enim repellendus pariatur rem
+        laudantium
+        animi molestiae dolor quia dolores blanditiis eligendi impedit facilis deserunt quae quod repudiandae iste ut,
+        necessitatibus est, esse magnam? Ut minima illo, quas eaque repellendus porro eligendi. Quibusdam quae, ipsum
+        dolores recusandae ex numquam nesciunt adipisci natus voluptate delectus minima hic. Natus obcaecati aut eum.
+        Exercitationem, alias officia qui mollitia quis cupiditate placeat quo, dolore ullam harum maiores tenetur
+        consectetur id. Voluptate atque sequi dicta, incidunt quasi dolorum assumenda beatae aliquam odit autem earum
+        exercitationem reprehenderit, quo tempore, odio deserunt quae quaerat ullam ea perspiciatis natus expedita nam
+        quidem. Odit quas sunt molestias. Obcaecati facilis ullam est optio ex commodi et! Culpa ab itaque magni nulla
+        voluptates veritatis vitae deleniti, ad, in obcaecati corporis tempore doloribus? Explicabo nemo sit cumque quam
+        nostrum aliquam quia, ut autem provident pariatur? Maiores impedit saepe ducimus praesentium provident nesciunt
+        amet itaque soluta neque harum doloribus suscipit reiciendis, perferendis dolores quasi.</p>
     </div>
     <h3 class="teamText">Our Team</h3>
     <div class="team">
-      <div class="member"><h4>Member 1</h4> <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias numquam laboriosam atque ea placeat.</p></div>
-      <div class="member"><h4>Member 2</h4> <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias numquam laboriosam atque ea placeat.</p></div>
-      <div class="member"><h4>Member 3</h4> <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias numquam laboriosam atque ea placeat.</p></div>
+      <div class="member">
+        <h4>Member 1</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias
+          numquam
+          laboriosam atque ea placeat.</p>
+      </div>
+      <div class="member">
+        <h4>Member 2</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias
+          numquam
+          laboriosam atque ea placeat.</p>
+      </div>
+      <div class="member">
+        <h4>Member 3</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias
+          numquam
+          laboriosam atque ea placeat.</p>
+      </div>
     </div>
+  </div>
 
+  <!-- Footer: copy paste this in all pages -->
+  <footer class="footer-gloss footer-bg">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center gap-1">
+            <img src="images/logo-without-bg.png" alt="Logo" class="logo-footer" />
+            <h4 style="margin-bottom: 20px">Celeste Cosmetics</h4>
+          </div>
 
-  </body>
+          <p class="text-secondary mb-4">
+            Where clean formulas meet elegant simplicity to enhance your
+            natural radiance. Every product is designed to feel soft,
+            effortless, and beautifully you.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <h6 class="text-muted mb-3">Shop</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a class="footer-link" href="#">Makeup Collection</a>
+            </li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Skincare Essentials</a>
+            </li>
+            <li class="mb-2">
+              <a class="footer-link" href="#">Science &amp; Research</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <h6 class="text-muted mb-3">Contact</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-envelope me-2 text-secondary"></i>
+              <a class="footer-link" href="mailto:hello@celeste.com">hello@celeste.com</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-telephone me-2 text-secondary"></i>
+              <a class="footer-link">+973 33336666</a>
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-geo-alt me-2 text-secondary"></i>
+              <span class="text-secondary">Bahrain Polytechnic, Isa Town</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="my-4 opacity-25" />
+      <div class="small text-secondary">
+        &copy; 2025 Celeste Cosmetics. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Getting username
+    let userName = document.getElementById('user-name')
+
+    function getUser() {
+      let username = localStorage.getItem('username')
+      if (username) {
+        userName.textContent = `Welcome, ${username}!`
+      } else {
+        userName.textContent = `Welcome, user!`
+      }
+    }
+    getUser()
+  </script>
+
+</body>
+
 </html>

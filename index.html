@@ -93,6 +93,10 @@
       background-color: var(--brown);
     }
 
+    .main {
+      padding-top: 2rem;
+    }
+
     /* ---------- Footer ---------- */
 
     .logo-footer {
@@ -380,187 +384,188 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero -->
-  <header class="hero">
-    <div class="panel">
-      <h1 class="display-4 mb-3">Glow, every day.</h1>
-      <p class="lead mb-4">
-        Clean skincare & beauty, crafted for radiant confidence.
+  <div class="main">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="panel">
+        <h1 class="display-4 mb-3">Glow, every day.</h1>
+        <p class="lead mb-4">
+          Clean skincare & beauty, crafted for radiant confidence.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-2">
+          <a href="#" class="btn btn-lg btn-brand text-white px-4">Shop Now</a>
+        </div>
+      </div>
+    </header>
+    <!-- Mission -->
+    <section class="mission-section container">
+      <h2>Our Mission</h2>
+      <p class="lead">
+        We create high-quality beauty products that are clean, luxurious, and
+        made for everyone. Our mission is simple: elevate your routine with
+        formulas that feel good, look good, and do good.
       </p>
-      <div class="d-flex justify-content-center flex-wrap gap-2">
-        <a href="#" class="btn btn-lg btn-brand text-white px-4">Shop Now</a>
-      </div>
-    </div>
-  </header>
-  <!-- Mission -->
-  <section class="mission-section container">
-    <h2>Our Mission</h2>
-    <p class="lead">
-      We create high-quality beauty products that are clean, luxurious, and
-      made for everyone. Our mission is simple: elevate your routine with
-      formulas that feel good, look good, and do good.
-    </p>
 
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4">
-        <div class="mission-card h-100">
-          <div class="mission-icon">
-            <img src="images/clean-hands-svgrepo-com (1).svg" class="value-icon" />
-          </div>
-
-          <h5 class="mission-title">Clean Beauty</h5>
-
-          <p>
-            Gentle, safe, and transparent formulas designed to nourish your
-            skin without unnecessary additives.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="mission-card h-100">
-          <div class="mission-icon">
-            <img src="images/woman-bag-3-svgrepo-com (4).svg" class="value-icon" />
-          </div>
-          <h5 class="mission-title">Luxury Quality</h5>
-          <p>
-            Premium ingredients and refined formulations that deliver a
-            smooth, high-end experience every time.
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="mission-card h-100">
-          <div class="mission-icon">
-            <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M9.47963 6.8252C7.66038 7.50672 6.75075 7.84748 6.641 8.55405C6.53124 9.26062 7.29404 9.86506 8.81965 11.0739L9.21434 11.3867C9.64787 11.7302 9.86464 11.902 9.9889 12.1361C10.1132 12.3702 10.1309 12.6402 10.1662 13.1801L10.1984 13.6717C10.3229 15.5717 10.3852 16.5217 11.0438 16.8493C11.7024 17.1768 12.5212 16.6649 14.1588 15.6412L14.5825 15.3763C15.0479 15.0854 15.2805 14.9399 15.5467 14.8999C15.8128 14.86 16.0822 14.93 16.621 15.07L17.1116 15.1975C19.0078 15.6903 19.9559 15.9367 20.4727 15.4325C20.9895 14.9284 20.7328 14.0076 20.2193 12.166M20.6654 9.29403C21.7128 7.69854 22.2365 6.90079 21.8973 6.26168C21.5581 5.62258 20.5806 5.56537 18.6256 5.45095L18.1198 5.42135C17.5643 5.38884 17.2865 5.37259 17.0452 5.25261C16.804 5.13263 16.6265 4.9225 16.2716 4.50226L15.9486 4.11967C14.6997 2.64083 14.0753 1.90141 13.3488 2.01056C12.6224 2.11971 12.275 3.00516 11.5803 4.77604"
-                  stroke="#A2844B" stroke-width="1.5" stroke-linecap="round"></path>
-                <path
-                  d="M6.59527 8.55078C3.48192 10.6857 1.09828 14.7691 2.33125 21.9998C3.42268 18.9857 6.71261 16.5716 10.3877 15.4097"
-                  stroke="#A2844B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-              </g>
-            </svg>
-          </div>
-          <h5 class="mission-title">Inclusive Beauty</h5>
-          <p>
-            Products crafted to flatter all skin tones and celebrate every
-            person’s unique beauty.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section class="py-5" id="products">
-    <div class="container text-center">
-      <h2 class="mb-5" style="color: var(--bronze)">Best Sellers</h2>
-      <div class="row g-4">
+      <div class="row g-4 justify-content-center">
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
-            <img src="images/celeste-lipstick.png" class="card-img-top" alt="Celeste product" />
-            <div class="card-body text-center">
-              <h5 class="card-title fw-semibold text-primary">
-                Celeste Signature Velvet Lipstick
-              </h5>
-              <p class="card-text text-secondary">
-                A timeless red designed for every skin tone.
-              </p>
-              <a href="product-detail.html" class="btn btn-primary">View Details</a>
+          <div class="mission-card h-100">
+            <div class="mission-icon">
+              <img src="images/clean-hands-svgrepo-com (1).svg" class="value-icon" />
             </div>
+
+            <h5 class="mission-title">Clean Beauty</h5>
+
+            <p>
+              Gentle, safe, and transparent formulas designed to nourish your
+              skin without unnecessary additives.
+            </p>
           </div>
         </div>
+
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
-            <img src="images/celeste-lashserum.png" class="card-img-top" alt="Celeste product" />
-            <div class="card-body text-center">
-              <h5 class="card-title fw-semibold text-primary">
-                Celeste's Lash & Brow Serum
-              </h5>
-              <p class="card-text text-secondary">
-                A lightweight, water-based lash and brow serum.
-              </p>
-              <a href="product-detail.html" class="btn btn-primary">View Details</a>
+          <div class="mission-card h-100">
+            <div class="mission-icon">
+              <img src="images/woman-bag-3-svgrepo-com (4).svg" class="value-icon" />
             </div>
+            <h5 class="mission-title">Luxury Quality</h5>
+            <p>
+              Premium ingredients and refined formulations that deliver a
+              smooth, high-end experience every time.
+            </p>
           </div>
         </div>
+
         <div class="col-md-4">
-          <div class="card border-0 shadow-sm h-100">
-            <img src="images/celeste-lip-serum.jpeg" class="card-img-top" alt="Celeste product" />
-            <div class="card-body text-center">
-              <h5 class="card-title fw-semibold text-primary">
-                Celeste Botanical Lip Serum
-              </h5>
-              <p class="card-text text-secondary">
-                A hydrating lip elixir infused with hyaluronic micro-pearls and rose extract.
-              </p>
-              <a href="product-detail.html" class="btn btn-primary">View Details</a>
+          <div class="mission-card h-100">
+            <div class="mission-icon">
+              <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M9.47963 6.8252C7.66038 7.50672 6.75075 7.84748 6.641 8.55405C6.53124 9.26062 7.29404 9.86506 8.81965 11.0739L9.21434 11.3867C9.64787 11.7302 9.86464 11.902 9.9889 12.1361C10.1132 12.3702 10.1309 12.6402 10.1662 13.1801L10.1984 13.6717C10.3229 15.5717 10.3852 16.5217 11.0438 16.8493C11.7024 17.1768 12.5212 16.6649 14.1588 15.6412L14.5825 15.3763C15.0479 15.0854 15.2805 14.9399 15.5467 14.8999C15.8128 14.86 16.0822 14.93 16.621 15.07L17.1116 15.1975C19.0078 15.6903 19.9559 15.9367 20.4727 15.4325C20.9895 14.9284 20.7328 14.0076 20.2193 12.166M20.6654 9.29403C21.7128 7.69854 22.2365 6.90079 21.8973 6.26168C21.5581 5.62258 20.5806 5.56537 18.6256 5.45095L18.1198 5.42135C17.5643 5.38884 17.2865 5.37259 17.0452 5.25261C16.804 5.13263 16.6265 4.9225 16.2716 4.50226L15.9486 4.11967C14.6997 2.64083 14.0753 1.90141 13.3488 2.01056C12.6224 2.11971 12.275 3.00516 11.5803 4.77604"
+                    stroke="#A2844B" stroke-width="1.5" stroke-linecap="round"></path>
+                  <path
+                    d="M6.59527 8.55078C3.48192 10.6857 1.09828 14.7691 2.33125 21.9998C3.42268 18.9857 6.71261 16.5716 10.3877 15.4097"
+                    stroke="#A2844B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+              </svg>
+            </div>
+            <h5 class="mission-title">Inclusive Beauty</h5>
+            <p>
+              Products crafted to flatter all skin tones and celebrate every
+              person’s unique beauty.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="py-5" id="products">
+      <div class="container text-center">
+        <h2 class="mb-5" style="color: var(--bronze)">Best Sellers</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <img src="images/celeste-lipstick.png" class="card-img-top" alt="Celeste product" />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-semibold text-primary">
+                  Celeste Signature Velvet Lipstick
+                </h5>
+                <p class="card-text text-secondary">
+                  A timeless red designed for every skin tone.
+                </p>
+                <a href="product-detail.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <img src="images/celeste-lashserum.png" class="card-img-top" alt="Celeste product" />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-semibold text-primary">
+                  Celeste's Lash & Brow Serum
+                </h5>
+                <p class="card-text text-secondary">
+                  A lightweight, water-based lash and brow serum.
+                </p>
+                <a href="product-detail.html" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+              <img src="images/celeste-lip-serum.jpeg" class="card-img-top" alt="Celeste product" />
+              <div class="card-body text-center">
+                <h5 class="card-title fw-semibold text-primary">
+                  Celeste Botanical Lip Serum
+                </h5>
+                <p class="card-text text-secondary">
+                  A hydrating lip elixir infused with hyaluronic micro-pearls and rose extract.
+                </p>
+                <a href="product-detail.html" class="btn btn-primary">View Details</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Form -->
-  <section class="min-vh-50 d-flex justify-content-center align-items-center py-5" id="register-form-section">
-    <div class="p-4 rounded shadow-sm" id="register-form">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-9 col-xl-8">
-          <h4 class="form-header" style="color: #353434">
-            Register Your Interest
-          </h4>
-          <form class="mx-auto needs-validation" id="registerForm">
-            <div class="mb-3">
-              <label class="form-label">First Name</label>
-              <input type="text" class="form-control" placeholder="First Name" id="first-name" minlength="3" required />
-              <div class="invalid-feedback">Please enter a valid first name (min 3 letters).</div>
-            </div>
+    </section>
+    <!-- Form -->
+    <section class="min-vh-50 d-flex justify-content-center align-items-center py-5" id="register-form-section">
+      <div class="p-4 rounded shadow-sm" id="register-form">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+            <h4 class="form-header" style="color: #353434">
+              Register Your Interest
+            </h4>
+            <form class="mx-auto needs-validation" id="registerForm">
+              <div class="mb-3">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" id="first-name" minlength="3"
+                  required />
+                <div class="invalid-feedback">Please enter a valid first name (min 3 letters).</div>
+              </div>
 
-            <div class="mb-3">
-              <label class="form-label">Last Name</label>
-              <input type="text" class="form-control" placeholder="Last Name" id="last-name" minlength="3" required />
-              <div class="invalid-feedback">Please enter a valid last name (min 3 letters).</div>
-            </div>
-            <!-- 
+              <div class="mb-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" id="last-name" minlength="3" required />
+                <div class="invalid-feedback">Please enter a valid last name (min 3 letters).</div>
+              </div>
+              <!-- 
             <div class="mb-3">
               <label class="form-label">Email</label>
               <input type="email" class="form-control" placeholder="Email" id="email" required />
               <div class="invalid-feedback">Please enter a valid email.</div>
             </div> -->
 
-            <!-- Removed above because HTML validation rules validate as you type so it's not checking validity properly using the function I provided -->
-            <div class="mb-3">
-              <label class="form-label">Email</label>
-              <!-- Input type changed to text instead of email because of automatic validation (a@ would be considered a valid email) -->
-              <input type="text" class="form-control" placeholder="Email" id="email" />
-              <div class="invalid-feedback">Please enter a valid email.</div>
-            </div>
+              <!-- Removed above because HTML validation rules validate as you type so it's not checking validity properly using the function I provided -->
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <!-- Input type changed to text instead of email because of automatic validation (a@ would be considered a valid email) -->
+                <input type="text" class="form-control" placeholder="Email" id="email" />
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
 
-            <div class="mb-3">
-              <label class="form-label">Mobile No.</label>
-              <input type="text" class="form-control" placeholder="Mobile No." maxlength="8" minlength="8" id="mobile"
-                required />
-              <div class="invalid-feedback">Please enter an 8-digit mobile number.</div>
+              <div class="mb-3">
+                <label class="form-label">Mobile No.</label>
+                <input type="text" class="form-control" placeholder="Mobile No." id="mobile" />
+                <div class="invalid-feedback">Please enter an 8-digit mobile number.</div>
 
-            </div>
+              </div>
 
-            <div class="text-center">
-              <p id="validation-message"></p>
-              <button type="submit" class="btn btn-brand submit-btn" id="register-form-button">
-                Submit
-              </button>
-            </div>
-          </form>
+              <div class="text-center">
+                <p id="validation-message"></p>
+                <button type="submit" class="btn btn-brand submit-btn" id="register-form-button">
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
   <!-- Footer: copy paste this in all pages -->
   <footer class="footer-gloss footer-bg">
@@ -619,7 +624,6 @@
       </div>
     </div>
   </footer>
-
   <script>
 
     // Getting username
@@ -652,63 +656,82 @@
     }
 
     registerButton.addEventListener('click', () => {
+
       // clear validation message
       validationMessage.classList.remove('success')
       validationMessage.classList.remove('show-message')
       validationMessage.innerHTML = ''
-
       errors = []
       let firstName = document.getElementById('first-name')
       let lastName = document.getElementById('last-name')
       let email = document.getElementById('email')
       let mobile = document.getElementById('mobile')
 
+      // form.classList.remove("was-validated")
+      email.classList.remove("is-valid", "is-invalid")
+      firstName.classList.remove("is-valid", "is-invalid")
+      lastName.classList.remove("is-valid", "is-invalid")
+      mobile.classList.remove("is-valid", "is-invalid")
+
+
       event.preventDefault()
 
       if (!firstName.value) {
         errors.push('First name is required')
+
+        firstName.classList.add("is-invalid")
+        firstName.classList.remove("is-valid")
       } else if (firstName.value.length < 3) {
         errors.push('First name should be at least 3 characters')
+
+        firstName.classList.add("is-invalid")
+        firstName.classList.remove("is-valid")
       }
 
       if (!lastName.value) {
         errors.push('Last name is required')
+
+        lastName.classList.add("is-invalid")
+        lastName.classList.remove("is-valid")
       } else if (lastName.value.length < 3) {
         errors.push('Last name should be at least 3 characters')
+
+        lastName.classList.add("is-invalid")
+        lastName.classList.remove("is-valid")
       }
 
 
       if (!email.value) { // if there is no email
-        errors.push('Email is required');
+        errors.push('Email is required')
 
-        email.classList.add("is-invalid");
-        email.classList.remove("is-valid");
+        email.classList.add("is-invalid")
+        email.classList.remove("is-valid")
 
       } else if (!valid(email.value)) { // if email format is invalid
-        errors.push('Please enter a valid email.');
+        errors.push('Please enter a valid email.')
 
-        email.classList.add("is-invalid");
-        email.classList.remove("is-valid");
+        email.classList.add("is-invalid")
+        email.classList.remove("is-valid")
 
       } else {
-        email.classList.add("is-valid");
-        email.classList.remove("is-invalid");
+        email.classList.add("is-valid")
+        email.classList.remove("is-invalid")
       }
 
 
       if (!mobile.value) {
         errors.push('Mobile number is required')
+
+        mobile.classList.add("is-invalid")
+        mobile.classList.remove("is-valid")
       } else if (mobile.value.length !== 8 || isNaN(mobile.value)) {
         errors.push('Mobile Number should have exactly 8 digits.')
+
+        mobile.classList.add("is-invalid")
+        mobile.classList.remove("is-valid")
       }
 
-      if (errors.length > 0) {
-
-        // validationMessage.classList.add('show-message')
-        // validationMessage.innerHTML =
-        //   `<strong>Please fix the following:</strong><br>` +
-        //   errors.join('<br>')
-      } else {
+      if (!errors.length) {
 
         validationMessage.classList.add('success', 'show-message')
         validationMessage.textContent = 'Form submitted successfully!'
@@ -719,11 +742,11 @@
         email.value = ''
         mobile.value = ''
 
-        form.classList.remove("was-validated");
-        email.classList.remove("is-valid", "is-invalid");
-        firstName.classList.remove("is-valid", "is-invalid");
-        lastName.classList.remove("is-valid", "is-invalid");
-        mobile.classList.remove("is-valid", "is-invalid");
+        form.classList.remove("was-validated")
+        email.classList.remove("is-valid", "is-invalid")
+        firstName.classList.remove("is-valid", "is-invalid")
+        lastName.classList.remove("is-valid", "is-invalid")
+        mobile.classList.remove("is-valid", "is-invalid")
 
 
       }
