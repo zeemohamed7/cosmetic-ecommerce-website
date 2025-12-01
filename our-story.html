@@ -292,81 +292,102 @@
     <div class="reflect">
       <h2>Reflection</h2>
       <p>
-        Throughout this project, we collaboratively designed and developed Celeste, a multi-page cosmetics website that
-        applies core Web Fundamentals concepts such as semantic HTML, CSS styling, JavaScript interactivity, responsive
-        Bootstrap layouts, and consistent branding. Our work included building the Homepage, Science page, Our Story
-        page, Making Of page, and a fully functional Registration Form with dynamic validation and user-friendly
-        feedback.
+        Throughout this project, our group worked together to design and develop
+        <strong>Celeste</strong>, a multi-page cosmetics e-commerce website. The project included several main pages
+        such as the Homepage, Science page, Our Story page, Making Of page, a Registration Form with full validation,
+        a Product Detail page, and a functional Cart page. Building all of these helped us apply the concepts we learned
+        in Web Fundamentals, including responsive design, JavaScript interactivity, and consistent branding across
+        different screens and layouts.
       </p>
 
       <p>
-        Our project began with creating a unified brand identity. We built a color system using CSS variables (:root),
-        which allowed us to apply bronze, cream, peach, pink, and brown consistently throughout the website. We also
-        chose Google Fonts (Roboto) for a clean and modern style. Hero images and product images were created using AI
-        tools to match the soft, elegant Celeste theme. Structurally, we applied semantic HTML5 elements such as
-        <code>section</code>, <code>header</code>, <code>main</code>, and <code>footer</code> for clarity and long-term
-        maintainability.
+        One of the first things we focused on was creating a clear and unified brand identity. Choosing the right colors
+        and overall design direction was one of the early challenges, and our teammate Fatima took the lead on this
+        part.
+        She came up with the Celeste theme and selected a palette that fit the idea of a soft, elegant cosmetics brand.
+        We then turned these colours into CSS variables so that they stayed consistent throughout the website. We also
+        used the Roboto font from Google Fonts to match the modern style we were aiming for, and we created matching
+        hero and product images using AI tools. This helped all the pages look visually connected and made the brand
+        feel more professional.
+      </p>
+      <p>
+        A big part of the technical work involved learning and applying JavaScript.
+        The Registration Form required fully custom validation written in our own JavaScript,
+        instead of relying on the browser’s built-in validation. We used regex patterns,
+        length checks, and conditional messages to control exactly how each input behaves.
+        This also allowed us to show our own success and error states and avoid automatic
+        validation popping up while the user is still typing. We combined these scripts with
+        Bootstrap’s validation classes, which took some experimentation to get right.
+        Through this process, we became more confident with event listeners, DOM manipulation, and using
+        <code>localStorage</code> to show the user’s name in the navigation bar after registration.
+      </p>
+
+
+      <p>
+        We also created a <strong>Product Detail page</strong> and a <strong>Cart page</strong>, which pushed us to
+        learn even more JavaScript. These features required updating quantities, switching product images, and
+        calculating
+        totals. We looked at documentation and examples from other developers to understand how cart logic usually
+        works, and then we adapted it to fit our own project. This taught us how to read and reuse code from different
+        sources, which is a valuable skill in real development.
       </p>
 
       <p>
-        We faced several challenges during development. One major difficulty was working with JavaScript before it was
-        fully covered in the syllabus. Implementing the registration form required regex-based email validation,
-        character length checks, and dynamic error messages. To overcome this, we relied on documentation, online
-        examples, and internal group support. Combining JavaScript validation with Bootstrap’s
-        <code>.was-validated</code>, <code>.invalid-feedback</code>, and <code>.is-valid</code> classes required
-        experimentation and debugging until the form behaved correctly.
+        On the design side, we improved our CSS and Bootstrap skills, especially with responsiveness. We used padding
+        and margin utilities to control spacing, experimented with media queries when needed, and used the browser
+        inspector to fix layout issues. We also worked with SVG icons to make the interface look cleaner and more
+        modern.
+        Learning how to balance custom CSS with Bootstrap’s built-in classes helped us make the site responsive without
+        writing unnecessary code.
       </p>
 
       <p>
-        Another challenge involved overriding Bootstrap’s default styling. Some Bootstrap utilities were conflicting
-        with our custom design system, especially with form controls and spacing. We overcame this by using targeted
-        selectors (such as <code>#registerForm .form-control</code>), increasing CSS specificity, and reorganizing our
-        custom rules. We also used the browser inspector to fix layout issues, adjust the box model, correct spacing
-        problems, and ensure responsiveness on smaller screens.
+        Collaboration was also a major part of the project. One of the challenges we faced was planning work around one
+        another’s tasks, especially when multiple pages depended on shared components or styling. To solve this, we used
+        a to-do list and a Trello board to assign tasks, track progress, and avoid overlapping work. This made
+        communication easier and helped us stay organized throughout the project. We also divided tasks based on each
+        person’s strengths—some worked more on JavaScript logic while others handled layout, styling, or content
+        writing.
       </p>
 
       <p>
-        In terms of group work, this project taught us the value of clear communication and regular updates. Sharing
-        ideas early prevented misunderstandings and ensured everyone stayed aligned with the brand style and
-        functionality. We divided responsibilities based on strengths—for example, some focusing more on JavaScript
-        logic while others handled layout, page content, and documentation. Using GitHub helped us collaborate smoothly,
-        commit changes safely, and make sure the entire group always worked on the latest version of the project.
+        This project helped us improve our technical skills in a practical way. We became more confident using Bootstrap
+        components like grids, cards, navbars, and forms. We learned how to write cleaner CSS, use variables
+        effectively,
+        and debug layout issues. In JavaScript, we gained experience with validation logic, interactive UI components,
+        and storing data using the browser. We also saw how all these elements come together in a real e-commerce
+        website.
       </p>
 
       <p>
-        Technically, this project strengthened our understanding of web development. We learned how to structure
-        webpages properly using semantic HTML, create scalable and maintainable styling using CSS variables, and debug
-        issues related to specificity and the cascade. We became more comfortable with Bootstrap, especially responsive
-        grids, cards, navbars, and form components. In JavaScript, we learned how to use
-        <code>addEventListener()</code>, regex patterns for validation, DOM manipulation, and localStorage to
-        personalize the navigation bar by showing the user's name.
+        Overall, this project allowed us to turn the theoretical concepts from class into a fully functioning website.
+        It also helped us get better at working as a team, solving problems together, and adapting when we ran into
+        challenges. By the end, we felt more confident in both our technical abilities and our ability to collaborate
+        on a real development project.
       </p>
 
-      <p>
-        We also learned how to create interactive UI sections such as ingredient tabs using Bootstrap pills, thumbnail
-        click effects, and dynamic form messages. Debugging became easier as we practiced reading console messages,
-        checking for missing brackets, and inspecting CSS layers. Overall, this project helped us transform theoretical
-        lessons into a functioning, polished website and strengthened both our technical abilities and our confidence in
-        working collaboratively on real web projects.
-      </p>
     </div>
   </div>
   <h3 class="teamText">Our Team</h3>
   <div class="team">
     <div class="member">
-      <h4>Member 1</h4>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias numquam
-        laboriosam atque ea placeat.</p>
+      <h4>Fatima Alqallaf</h4>
+      <p>Fatima developed the Product Detail page and the Science page.
+        She was also responsible for designing the entire Celeste theme, including the logo,
+        the colour palette, and the brand identity that guided the look and feel of the website.</p>
     </div>
     <div class="member">
-      <h4>Member 2</h4>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias numquam
-        laboriosam atque ea placeat.</p>
+      <h4>Dana Alajami</h4>
+      <p>Dana created the Our Story page and the Cart page. She focused on
+        structuring the content, setting up the cart interactions, and ensuring both pages matched
+        the branding and layout style used across the website.</p>
     </div>
     <div class="member">
-      <h4>Member 3</h4>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat cumque id iusto delectus error alias numquam
-        laboriosam atque ea placeat.</p>
+      <h4>Zainab Mohamed</h4>
+      <p>Zainab worked on building the Homepage, the Registration Form,
+        and the Making Of page. My responsibilities included writing the custom JavaScript validation
+        for the form, styling the layout, and making sure the pages were consistent with the overall
+        Celeste design.</p>
     </div>
   </div>
   <!-- Footer: copy paste this in all pages -->
